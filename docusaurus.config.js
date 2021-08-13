@@ -22,14 +22,22 @@ module.exports = {
       items: [
         {
           type: 'doc',
-          docId: 'getting-started',
+          docId: 'introduction',
           position: 'left',
-          label: 'Getting Started',
+          label: 'Docs',
         },
-        {to: '/blog', label: 'Blog', position: 'left'},
+        {
+          to: '/blog',
+          label: 'Blog',
+          position: 'left'
+        },
         {
           href: 'https://github.com/techmmunity/compass',
           label: 'GitHub',
+          position: 'right',
+        },
+        {
+          type: 'localeDropdown',
           position: 'right',
         },
       ],
@@ -42,7 +50,7 @@ module.exports = {
           items: [
             {
               label: 'Tutorial',
-              to: '/docs/getting-started',
+              to: '/docs/introduction',
             },
           ],
         },
@@ -68,7 +76,7 @@ module.exports = {
             },
             {
               label: 'GitHub',
-              href: 'https://github.com/techmmunity/docusaurus',
+              href: 'https://github.com/techmmunity/compass',
             },
           ],
         },
@@ -102,4 +110,8 @@ module.exports = {
       },
     ],
   ],
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['en', 'pt-BR'],
+  },
 };
