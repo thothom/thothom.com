@@ -18,9 +18,6 @@ jobs:
       - name: Build
         run: yarn build
 
-      - name: Export
-        run: yarn export
-
       - name: Deploy S3
         uses: reggionick/s3-deploy@v3.1.1
         env:
