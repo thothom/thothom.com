@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Basics
+# Getting Started
 
 Compass uses Find Operators to do complex queries, so every query that isn't strictly `find * where column = "bar"`, needs a Find Operator to be done.
 
