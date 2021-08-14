@@ -59,13 +59,17 @@ export class ExampleEntity {
 
 The connections are imported **from the plugins**, so replace the `example-compass-plugin` of this example, with the plugin that you choose to use.
 
+When creating a connection, you must import all the entities and put it into and array of the connection options, like in this example:
+
 ```ts
 // database.connection.ts
 
 import { ExampleConnection } from "example-compass-plugin";
+import { ExampleEntity } from "./example.entity";
 
 export const connection = new ExampleConnection({
-  // Put the connection options here
+  entities: [ExampleEntity], // All your entities should be here
+  // Put the extra connection options here
 });
 ```
 
