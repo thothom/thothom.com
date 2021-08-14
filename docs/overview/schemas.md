@@ -8,7 +8,15 @@ Schemas are the things use to describe your database structure.
 
 They are made with `decorators`, and here is a list of all of they:
 
+<!-- ################################ -->
+<!-- ################################ -->
+<!-- ################################ -->
+
 ## Entities Decorators
+
+<!-- ################################ -->
+<!-- ################################ -->
+<!-- ################################ -->
 
 ### `@Entity`
 
@@ -82,6 +90,397 @@ Extra data that may be required by plugins.
 class ExampleEntity {}
 ```
 
+<!-- ################################ -->
+<!-- ################################ -->
+<!-- ################################ -->
+
 ## Columns Decorators
 
+<!-- ################################ -->
+<!-- ################################ -->
+<!-- ################################ -->
+
+### `@PrimaryGeneratedColumn`
+
+Use this decorator at your primary columns, that you want to be generated **by Techmmunity Compass**. If you want to manually generate the value of the column, or the database will do this for you, use the [`@PrimaryColumn`](#primarycolumn) decorator.
+
+**When to use?**
+
+- You want that Compass automatically generate the value of this column
+
+:::caution
+
+Primary columns only accept [**simple types**](#simple-types)! Types like arrays, objects, classes will throw an error!
+
+:::
+
+#### `name`
+
+The name of the column in the database.
+
+```ts
+class ExampleEntity {
+  @PrimaryGeneratedColumn({
+    name: "custom_name",
+  })
+  id: string;
+}
+```
+
+:::caution
+
+This name **isn't affected** by the `namingPattern` of the connection.
+
+:::
+
+#### `strategy`
+
+The strategy used to generate values.
+
+| DEFAULT | Supported Strategies |
+| :-----: | :------------------: |
+|    x    |       `"uuid"`       |
+
+```ts
+class ExampleEntity {
+  @PrimaryGeneratedColumn({
+    strategy: "uuid",
+  })
+  id: string;
+}
+
+// Or
+
+class ExampleEntity {
+  @PrimaryGeneratedColumn("uuid")
+  id: string;
+}
+```
+
+#### `extras`
+
+Extra data that may be required by plugins.
+
+```ts
+class ExampleEntity {
+  @PrimaryGeneratedColumn({
+    extras: {
+      foo: "bar",
+    },
+  })
+  id: string;
+}
+```
+
+<!-- ################################ -->
+<!-- ################################ -->
+<!-- ################################ -->
+
 ### `@PrimaryColumn`
+
+Use this decorator at your primary columns, that you want to be generated **manually** or **by the database**. If you want that the value of this column be generated automatically, use the [`@PrimaryGeneratedColumn`](#primarygeneratedcolumn) decorator.
+
+**When to use?**
+
+- You want to set the value of this column by your own
+- The database will automatically generate the value
+
+:::caution
+
+Primary columns only accept [**simple types**](#simple-types)! Types like arrays, objects, classes will throw an error!
+
+:::
+
+#### `name`
+
+The name of the column in the database.
+
+```ts
+class ExampleEntity {
+  @PrimaryColumn({
+    name: "custom_name",
+  })
+  id: string;
+}
+```
+
+:::caution
+
+This name **isn't affected** by the `namingPattern` of the connection.
+
+:::
+
+#### `extras`
+
+Extra data that may be required by plugins.
+
+```ts
+class ExampleEntity {
+  @PrimaryColumn({
+    extras: {
+      foo: "bar",
+    },
+  })
+  id: string;
+}
+```
+
+<!-- ################################ -->
+<!-- ################################ -->
+<!-- ################################ -->
+
+### `@Column`
+
+Use this decorator for almost all of your columns. It's a generic decorator.
+
+#### `name`
+
+The name of the column in the database.
+
+```ts
+class ExampleEntity {
+  @Column({
+    name: "custom_name",
+  })
+  foo: string;
+}
+```
+
+:::caution
+
+This name **isn't affected** by the `namingPattern` of the connection.
+
+:::
+
+#### `type`
+
+The type of the column. Currently, it's only used when the column type is an array, so you need to specify what type are the array items.
+
+:::danger
+
+Do **NOT** use the TypeScript types for typing! Use the [native javascript classes](#simple-types) or your own custom classes.
+
+:::
+
+```ts
+class ExampleEntity {
+  @Column({
+    type: String,
+  })
+  foo: Array<string>;
+}
+
+// Or
+
+class ExampleEntity {
+  @Column(String)
+  foo: Array<string>;
+}
+```
+
+#### `extras`
+
+Extra data that may be required by plugins.
+
+```ts
+class ExampleEntity {
+  @Column({
+    extras: {
+      foo: "bar",
+    },
+  })
+  foo: string;
+}
+```
+
+<!-- ################################ -->
+<!-- ################################ -->
+<!-- ################################ -->
+
+### `@SaveDateColumn`
+
+Date columns that will be automatically generated on **saving a record** to the database.
+
+This decorator accepts columns with [simple types](#simple-types), and will generate a value based on this type.
+
+| type   | value format | value example                                       |
+| ------ | ------------ | --------------------------------------------------- |
+| String | ISO          | `"2021-08-14T12:06:38.228Z"`                        |
+| Number | Epoch        | `1628942827629`                                     |
+| Date   | Date Object  | An date instance that will be handled by the plugin |
+
+:::info
+
+The values are affected by the `timeZone` config at the connection.
+
+:::
+
+#### `name`
+
+The name of the column in the database.
+
+```ts
+class ExampleEntity {
+  @SaveDateColumn({
+    name: "custom_name",
+  })
+  createdAt: Date;
+}
+```
+
+:::caution
+
+This name **isn't affected** by the `namingPattern` of the connection.
+
+:::
+
+#### `extras`
+
+Extra data that may be required by plugins.
+
+```ts
+class ExampleEntity {
+  @SaveDateColumn({
+    extras: {
+      foo: "bar",
+    },
+  })
+  createdAt: Date;
+}
+```
+
+<!-- ################################ -->
+<!-- ################################ -->
+<!-- ################################ -->
+
+### `@UpdateDateColumn`
+
+Date columns that will be automatically generated on **updating a record** to the database.
+
+This decorator accepts columns with [simple types](#simple-types), and will generate a value based on this type.
+
+| type   | value format | value example                                       |
+| ------ | ------------ | --------------------------------------------------- |
+| String | ISO          | `"2021-08-14T12:06:38.228Z"`                        |
+| Number | Epoch        | `1628942827629`                                     |
+| Date   | Date Object  | An date instance that will be handled by the plugin |
+
+:::info
+
+The values are affected by the `timeZone` config at the connection.
+
+:::
+
+#### `name`
+
+The name of the column in the database.
+
+```ts
+class ExampleEntity {
+  @UpdateDateColumn({
+    name: "custom_name",
+  })
+  updatedAt: Date;
+}
+```
+
+:::caution
+
+This name **isn't affected** by the `namingPattern` of the connection.
+
+:::
+
+#### `extras`
+
+Extra data that may be required by plugins.
+
+```ts
+class ExampleEntity {
+  @UpdateDateColumn({
+    extras: {
+      foo: "bar",
+    },
+  })
+  updatedAt: Date;
+}
+```
+
+<!-- ################################ -->
+<!-- ################################ -->
+<!-- ################################ -->
+
+### `@DeleteDateColumn`
+
+Date columns that will be automatically generated on **soft-deleting a record** to the database.
+
+This decorator accepts columns with [simple types](#simple-types), and will generate a value based on this type.
+
+| type   | value format | value example                                       |
+| ------ | ------------ | --------------------------------------------------- |
+| String | ISO          | `"2021-08-14T12:06:38.228Z"`                        |
+| Number | Epoch        | `1628942827629`                                     |
+| Date   | Date Object  | An date instance that will be handled by the plugin |
+
+:::info
+
+The values are affected by the `timeZone` config at the connection.
+
+:::
+
+#### `name`
+
+The name of the column in the database.
+
+```ts
+class ExampleEntity {
+  @DeleteDateColumn({
+    name: "custom_name",
+  })
+  deletedAt: Date;
+}
+```
+
+:::caution
+
+This name **isn't affected** by the `namingPattern` of the connection.
+
+:::
+
+#### `extras`
+
+Extra data that may be required by plugins.
+
+```ts
+class ExampleEntity {
+  @DeleteDateColumn({
+    extras: {
+      foo: "bar",
+    },
+  })
+  deletedAt: Date;
+}
+```
+
+<!-- ################################ -->
+<!-- ################################ -->
+<!-- ################################ -->
+
+## References
+
+### Simple Types
+
+Simples types are `String`, `Number` and `Date`.
+
+:::danger
+
+They **AREN'T** TypeScript types! They are native javascript classes!
+
+:::
+
+### Semi-Complex Types
+
+Semi-Complex types are `Array` and **custom classes**.
+
+### Complex Types
+
+Complex types are an **`Array` of custom classes**.
