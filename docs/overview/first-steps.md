@@ -103,7 +103,7 @@ ExampleRepository.findManyByPrimaryKey(data);
 
 You can see a full list of the repository methods [right here](./repositories).
 
-### Done!
+## Done!
 
 This is the basics of Techmmunity Compass! Now you are ready to start to explore and make your crazy CRUDs!
 

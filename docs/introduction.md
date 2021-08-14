@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Introduction
 
-Compass (Techmmunity Compass) is an [ORM](https://en.wikipedia.org/wiki/Object-relational_mapping) builded in TypeScript and inspired on [TypeORM syntax](https://github.com/typeorm/typeorm) and [ESLint plugable approach](https://eslint.org/).
+Compass (Techmmunity Compass) is an [ORM](https://en.wikipedia.org/wiki/Object-relational_mapping) built in TypeScript and inspired on [TypeORM syntax](https://github.com/typeorm/typeorm) and [ESLint plugable approach](https://eslint.org/).
 
 Our intention here is standardize the connection and implementation of **every database** with the best performance possible, and for this, we use an plugable approach, so more people can contribute and create their on integration. This package alone can't do anything besides typing, the plugins do all the "dirt work".
 
