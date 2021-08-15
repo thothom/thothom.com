@@ -82,18 +82,6 @@ This options specifies the logging level of the connection.
 
 The time **in seconds** that a query has before it be considered a fail.
 
-### `retires`
-
-Global quantity of retries that should be done if a query fails.
-
-:::danger
-
-This is applied for **all** the types of queries, like _save_, _delete_, _update_, _find_, and more! So be **EXTREMELY** careful about using this!
-
-It's so dangerous that the most plugins just ignore this config, so be careful!
-
-:::
-
 ### `namingPattern`
 
 This is were Techmmunity Compass starts to bright! This config will format every name of your entities, columns and in the future, indexes and more!
