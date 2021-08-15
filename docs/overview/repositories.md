@@ -6,7 +6,7 @@ sidebar_position: 4
 
 Repositories are the translator between code and database, they are used to do all the queries.
 
-All the repositories are created from the [connection](./connections) and the [schema](./schema), so you need they both to get your repository.
+All the repositories are created from the [connection](./connections) and the [schema](./schemas), so you need they both to get your repository.
 
 ## Creating a Repository
 
