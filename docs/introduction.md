@@ -24,4 +24,4 @@ Our goal here is to be the bridge from user to plugin-developer, making easy to 
 
 ## We need your help!
 
-We are needing translators for all languages! If you want to be a volunteer, please contact us on the discord!
+We are needing translators for all languages! If you want to be a volunteer, please contact us on the [discord](https://discord.gg/5hPnJzzAe2)!
