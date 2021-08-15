@@ -14,5 +14,9 @@
   "sidebar.tutorialSidebar.category.Create a Plugin": {
     "message": "Crie um Plugin",
     "description": "The label for category Create a Plugin in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Contributing": {
+    "message": "Contribuindo",
+    "description": "The label for category Contributing in sidebar tutorialSidebar"
   }
 }
