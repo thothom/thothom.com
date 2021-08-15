@@ -28,7 +28,6 @@ function HomepageHeader() {
 export default function Home() {
   return (
     <Layout
-      title="Hello!"
       description="Description will go into a meta tag in <head />">
       <HomepageHeader />
       <main>
