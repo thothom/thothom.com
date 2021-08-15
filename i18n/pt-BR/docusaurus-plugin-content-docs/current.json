@@ -1,0 +1,18 @@
+{
+  "version.label": {
+    "message": "Atual",
+    "description": "The label for version current"
+  },
+  "sidebar.tutorialSidebar.category.Overview": {
+    "message": "Visão Geral",
+    "description": "The label for category Overview in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Plugins": {
+    "message": "Plugins",
+    "description": "The label for category Plugins in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Create a Plugin": {
+    "message": "Crie um Plugin",
+    "description": "The label for category Create a Plugin in sidebar tutorialSidebar"
+  }
+}
