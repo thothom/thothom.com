@@ -1,36 +1,34 @@
 import React from 'react';
 import clsx from 'clsx';
 import styles from './HomepageFeatures.module.css';
+import Translate from '@docusaurus/Translate';
 
 const FeatureList = [
   {
     title: 'Easy to Use',
-    Svg: require('../../static/img/undraw_docusaurus_mountain.svg').default,
-    description: (
-      <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
-      </>
-    ),
-  },
-  {
-    title: 'Focus on What Matters',
-    Svg: require('../../static/img/undraw_docusaurus_tree.svg').default,
-    description: (
-      <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
-      </>
-    ),
-  },
-  {
-    title: 'Powered by React',
     Svg: require('../../static/img/undraw_docusaurus_react.svg').default,
     description: (
-      <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
-      </>
+      <Translate>
+        The Compass syntax is heavily inspired by TypeORM, one of the most popular ORMs in the TypeScript community. To migrate from TypeORM is easy, and most of the things and how to use are very familiar.
+      </Translate>
+    ),
+  },
+  {
+    title: 'Fast To Learn',
+    Svg: require('../../static/img/undraw_docusaurus_mountain.svg').default,
+    description: (
+      <Translate>
+        Compass is designed to decrease the learning curve of databases to the ground, so one time that you learn to use Compass, you will be able to use any database with almost any changes.
+      </Translate>
+    ),
+  },
+  {
+    title: 'Plugable',
+    Svg: require('../../static/img/undraw_docusaurus_tree.svg').default,
+    description: (
+      <Translate>
+        You don't need to await us to add support to any database. The community can do it! You can do it! We provide full support to who wants to create a plugin, and we keep a complete documentation about how to create one.
+      </Translate>
     ),
   },
 ];
