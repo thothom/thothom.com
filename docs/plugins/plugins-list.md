@@ -19,3 +19,7 @@ If you want to create your own plugin, see [this docs](../create-plugin/first-st
 ## MongoDB
 
 - [@techmmunity/compass-mongo](./mongo)
+
+## Redis
+
+- [@techmmunity/compass-redis](./redis)
