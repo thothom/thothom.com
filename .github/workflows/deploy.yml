@@ -19,12 +19,13 @@ jobs:
         run: yarn build
 
       - name: Deploy S3
-        uses: reggionick/s3-deploy@v3.1.1
+        uses: pukonu/action-deploy-webapp-aws@v.1.0
+        with:
+          build_path: "./build"
+          bucket_name: ${{ secrets.S3_BUCKET }}
+          distribution_invalidation_path: "/*"
         env:
+          DISTRIBUTION_ID: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}
+          AWS_REGION: ${{ secrets.S3_BUCKET_REGION }}
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        with:
-          folder: build
-          bucket: ${{ secrets.S3_BUCKET }}
-          bucket-region: ${{ secrets.S3_BUCKET_REGION }}
-          delete-removed: true
