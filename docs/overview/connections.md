@@ -82,7 +82,7 @@ This options specifies the logging level of the connection.
 
 The time **in seconds** that a query has before it be considered a fail.
 
-### `namingPattern`
+### `namingStrategy`
 
 This is were Techmmunity Compass starts to bright! This config will format every name of your entities, columns and in the future, indexes and more!
 
@@ -96,7 +96,7 @@ class ExampleEntity {}
 
 // And the config are:
 {
-  namingPattern: {
+  namingStrategy: {
     entity: "snake_case",
   },
 }
@@ -115,13 +115,13 @@ Works **FROM code TO database**. Ex: An class `ExampleClass` with prefix `Prefix
 
 :::caution
 
-The prefixes aren't affected by the namingPattern config! They are applied **AFTER** the namingPattern formatting, so be careful with which naming pattern you use in this config!
+The prefixes aren't affected by the namingStrategy config! They are applied **AFTER** the namingStrategy formatting, so be careful with which naming strategy you use in this config!
 
 :::
 
 :::caution
 
-The naming pattern are applied **BEFORE** the prefix and suffix, so in some cases, your column names maybe don't follow it, like in this example:
+The naming strategy are applied **BEFORE** the prefix and suffix, so in some cases, your column names maybe don't follow it, like in this example:
 
 ```ts
 // If you have the entity:
@@ -133,7 +133,7 @@ class ExampleEntity {
 
 // And your connection options are like this:
 {
-  namingPattern: {
+  namingStrategy: {
     column: "camelCase",
   },
   prefix: {
