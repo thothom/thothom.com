@@ -62,7 +62,7 @@ class ExampleEntity {}
 
 :::caution
 
-This name **isn't affected** by the `namingPattern` of the connection.
+This name **isn't affected** by the `namingStrategy` of the connection.
 
 :::
 
@@ -129,7 +129,7 @@ class ExampleEntity {
 
 :::caution
 
-This name **isn't affected** by the `namingPattern` of the connection.
+This name **isn't affected** by the `namingStrategy` of the connection.
 
 :::
 
@@ -206,7 +206,7 @@ class ExampleEntity {
 
 :::caution
 
-This name **isn't affected** by the `namingPattern` of the connection.
+This name **isn't affected** by the `namingStrategy` of the connection.
 
 :::
 
@@ -248,7 +248,7 @@ class ExampleEntity {
 
 :::caution
 
-This name **isn't affected** by the `namingPattern` of the connection.
+This name **isn't affected** by the `namingStrategy` of the connection.
 
 :::
 
@@ -330,7 +330,7 @@ class ExampleEntity {
 
 :::caution
 
-This name **isn't affected** by the `namingPattern` of the connection.
+This name **isn't affected** by the `namingStrategy` of the connection.
 
 :::
 
@@ -386,7 +386,7 @@ class ExampleEntity {
 
 :::caution
 
-This name **isn't affected** by the `namingPattern` of the connection.
+This name **isn't affected** by the `namingStrategy` of the connection.
 
 :::
 
@@ -442,7 +442,7 @@ class ExampleEntity {
 
 :::caution
 
-This name **isn't affected** by the `namingPattern` of the connection.
+This name **isn't affected** by the `namingStrategy` of the connection.
 
 :::
 
