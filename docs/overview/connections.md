@@ -10,22 +10,22 @@ Connections are the classes used to create the **database connection**, and hand
 
 :::caution
 
-Techmmunity Compass doesn't have a connection class to be imported by the user!
+Techmmunity Cosmos doesn't have a connection class to be imported by the user!
 
-The `Connection` exported from `@techmmunity/compass` is an **abstract class** to be used by the plugins!
+The `Connection` exported from `@techmmunity/cosmos` is an **abstract class** to be used by the plugins!
 
 :::
 
 ## Options
 
-Techmmunity Compass provides some basic config for the connections, that are present and can be used by any plugin.
+Techmmunity Cosmos provides some basic config for the connections, that are present and can be used by any plugin.
 
 Example where to use it:
 
 ```ts
 // database.connection.ts
 
-import { ExampleConnection } from "example-compass-plugin";
+import { ExampleConnection } from "example-cosmos-plugin";
 
 export const connection = new ExampleConnection({
   // <- HERE this are the connection options
@@ -39,7 +39,7 @@ This is the connection name. It mostly used for logs and will not interfere with
 ```ts
 // database.connection.ts
 
-import { ExampleConnection } from "example-compass-plugin";
+import { ExampleConnection } from "example-cosmos-plugin";
 
 export const connection = new ExampleConnection({
   name: "Default",
@@ -55,7 +55,7 @@ We are currently working to accept paths to the entities, like TypeORM does, but
 ```ts
 // database.connection.ts
 
-import { ExampleConnection } from "example-compass-plugin";
+import { ExampleConnection } from "example-cosmos-plugin";
 import { ExampleEntity } from "./example.entity";
 
 export const connection = new ExampleConnection({
@@ -84,7 +84,7 @@ The time **in seconds** that a query has before it be considered a fail.
 
 ### `namingStrategy`
 
-This is were Techmmunity Compass starts to bright! This config will format every name of your entities, columns and in the future, indexes and more!
+This is were Techmmunity Cosmos starts to bright! This config will format every name of your entities, columns and in the future, indexes and more!
 
 Accepted values: `"camelCase"`, `"PascalCase"`, `"snake_case"`, `"kebab-case"`, `"UPPER_CASE"`, and a custom function, like this: `(name: string) => string`.
 

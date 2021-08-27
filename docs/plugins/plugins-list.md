@@ -10,16 +10,16 @@ If you want to create your own plugin, see [this docs](../create-plugin/first-st
 
 ## Bigtable
 
-- [@techmmunity/compass-bigtable](./bigtable)
+- [@techmmunity/cosmos-bigtable](./bigtable)
 
 ## DynamoDB
 
-- [@techmmunity/compass-dynamo](./dynamo)
+- [@techmmunity/cosmos-dynamo](./dynamo)
 
 ## MongoDB
 
-- [@techmmunity/compass-mongo](./mongo)
+- [@techmmunity/cosmos-mongo](./mongo)
 
 ## Redis
 
-- [@techmmunity/compass-redis](./redis)
+- [@techmmunity/cosmos-redis](./redis)
