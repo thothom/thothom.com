@@ -102,11 +102,11 @@ class ExampleEntity {}
 
 ### `@PrimaryGeneratedColumn`
 
-Use this decorator at your primary columns, that you want to be generated **by Techmmunity Cosmos**. If you want to manually generate the value of the column, or the database will do this for you, use the [`@PrimaryColumn`](#primarycolumn) decorator.
+Use this decorator at your primary columns, that you want to be generated **by Techmmunity Symbiosis**. If you want to manually generate the value of the column, or the database will do this for you, use the [`@PrimaryColumn`](#primarycolumn) decorator.
 
 **When to use?**
 
-- You want that Cosmos automatically generate the value of this column
+- You want that Symbiosis automatically generate the value of this column
 
 :::caution
 

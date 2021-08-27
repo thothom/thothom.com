@@ -88,7 +88,7 @@ Updates many records of the table based on a query condition.
 
 Always try to make queries by primary keys, otherwise the queries will be **extremely** unperformative.
 
-**Obs:** This is a limitation from the databases, not from Cosmos, ok? :wink:
+**Obs:** This is a limitation from the databases, not from Symbiosis, ok? :wink:
 
 :::
 
@@ -154,7 +154,7 @@ Find multiple records by a query condition.
 
 Always try to make queries by primary keys, otherwise the queries will be **extremely** unperformative.
 
-**Obs:** This is a limitation from the databases, not from Cosmos, ok? :wink:
+**Obs:** This is a limitation from the databases, not from Symbiosis, ok? :wink:
 
 :::
 
@@ -174,7 +174,7 @@ findExamples({
 
 // Or
 
-import { FindOptions } from "@techmmunity/cosmos";
+import { FindOptions } from "@techmmunity/symbiosis";
 
 const findExamples = async (findOptions: FindOptions) => {
   const examples = await exampleRepository.find(findOptions);
@@ -197,7 +197,7 @@ Find one record by a query condition.
 
 Always try to make queries by primary keys, otherwise the queries will be **extremely** unperformative.
 
-**Obs:** This is a limitation from the databases, not from Cosmos, ok? :wink:
+**Obs:** This is a limitation from the databases, not from Symbiosis, ok? :wink:
 
 :::
 
@@ -217,7 +217,7 @@ findExample({
 
 // Or
 
-import { FindOptions } from "@techmmunity/cosmos";
+import { FindOptions } from "@techmmunity/symbiosis";
 
 const findExample = async (findOptions: FindOptions) => {
   const example = await exampleRepository.find(findOptions);
@@ -250,7 +250,7 @@ Delete multiple records by a query condition.
 
 Always try to make queries by primary keys, otherwise the queries will be **extremely** unperformative.
 
-**Obs:** This is a limitation from the databases, not from Cosmos, ok? :wink:
+**Obs:** This is a limitation from the databases, not from Symbiosis, ok? :wink:
 
 :::
 
@@ -270,7 +270,7 @@ deleteExamples({
 
 // Or
 
-import { FindOptions } from "@techmmunity/cosmos";
+import { FindOptions } from "@techmmunity/symbiosis";
 
 const deleteExamples = async (findOptions: FindOptions) => {
   const examples = await exampleRepository.delete(findOptions);
@@ -299,7 +299,7 @@ To use this method, the entity must have a column decorated with [`@DeleteDateCo
 
 Always try to make queries by primary keys, otherwise the queries will be **extremely** unperformative.
 
-**Obs:** This is a limitation from the databases, not from Cosmos, ok? :wink:
+**Obs:** This is a limitation from the databases, not from Symbiosis, ok? :wink:
 
 :::
 
@@ -319,7 +319,7 @@ deleteExamples({
 
 // Or
 
-import { FindOptions } from "@techmmunity/cosmos";
+import { FindOptions } from "@techmmunity/symbiosis";
 
 const deleteExamples = async (findOptions: FindOptions) => {
   const examples = await exampleRepository.softDelete(findOptions);
@@ -348,7 +348,7 @@ To use this method, the entity must have a column decorated with [`@DeleteDateCo
 
 Always try to make queries by primary keys, otherwise the queries will be **extremely** unperformative.
 
-**Obs:** This is a limitation from the databases, not from Cosmos, ok? :wink:
+**Obs:** This is a limitation from the databases, not from Symbiosis, ok? :wink:
 
 :::
 
@@ -368,7 +368,7 @@ recoverExamples({
 
 // Or
 
-import { FindOptions } from "@techmmunity/cosmos";
+import { FindOptions } from "@techmmunity/symbiosis";
 
 const recoverExamples = async (findOptions: FindOptions) => {
   const examples = await exampleRepository.recover(findOptions);
@@ -401,7 +401,7 @@ Count the records returned by a query condition.
 
 Always try to make queries by primary keys, otherwise the queries will be **extremely** unperformative.
 
-**Obs:** This is a limitation from the databases, not from Cosmos, ok? :wink:
+**Obs:** This is a limitation from the databases, not from Symbiosis, ok? :wink:
 
 :::
 
@@ -421,7 +421,7 @@ countExamples({
 
 // Or
 
-import { FindOptions } from "@techmmunity/cosmos";
+import { FindOptions } from "@techmmunity/symbiosis";
 
 const countExamples = async (findOptions: FindOptions) => {
   const examples = await exampleRepository.count(findOptions);
@@ -468,7 +468,7 @@ countExamples({
 
 // Or
 
-import { FindOptions } from "@techmmunity/cosmos";
+import { FindOptions } from "@techmmunity/symbiosis";
 
 const countExamples = async (findOptions: FindOptions) => {
   const examples = await exampleRepository.performativeCount(findOptions);

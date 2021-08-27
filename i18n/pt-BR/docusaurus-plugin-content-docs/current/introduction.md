@@ -4,7 +4,7 @@ sidebar_position: 0
 
 # Introdução
 
-Cosmos (Techmmunity Cosmos) é uma [ORM](https://en.wikipedia.org/wiki/Object-relational_mapping) feita em TypeScript e inspirada na [sintaxe do TypeORM](https://github.com/typeorm/typeorm) e [abordagem plugavel do ESLint](https://eslint.org/).
+Symbiosis (Techmmunity Symbiosis) é uma _Object Mapper_([ORM + ODM](https://medium.com/spidernitt/orm-and-odm-a-brief-introduction-369046ec57eb)) feita em TypeScript e inspirada na [sintaxe do TypeORM](https://github.com/typeorm/typeorm) e [abordagem plugavel do ESLint](https://eslint.org/).
 
 Nossa intenção aqui é padronizar a conexão e o uso de **todos os bancos de dados** com a melhor performance possível, e para isso, nós utilizamos uma abordagem plugavel, com isso mais pessoas podem contribuir e criar suas próprias integrações com diferentes tipos de bancos de dados. O foco desse pacote para o usuário final, é apenas fazer a tipagem, enquanto os plugin fazem o "trabalho sujo" por debaixo dos panos.
 
@@ -16,9 +16,9 @@ Nos últimos anos, mais bancos de dados foram criados, e também mais dados fora
 
 Para lidar com todos esses bancos de dados, os desenvolvedores devem aprender do zero, como usar o provedor sdk, como fazer consultas, como configurar o banco de dados, e muitas outras informações sem conexão com o produto ou com o sistema que estão construindo, forçando-os a perder tempo e dinheiro.
 
-Com esses problemas em mente, nós criamos a solução: Uma ORM que pode se comunicar com **TODOS** os bancos de dados, usando a mesma sintaxe, os mesmos métodos e as mesmas configurações.
+Com esses problemas em mente, nós criamos a solução: Uma OM que pode se comunicar com **TODOS** os bancos de dados, usando a mesma sintaxe, os mesmos métodos e as mesmas configurações.
 
-Mas como fazer isso? É impossível para um time fazer isso sozinho. E sobre a complexidade e o tamanho do pacote? Seria insano e ineficaz. Então nós escolhemos fazer uma ORM **plugavel**, nós fazemos o básico e providênciamos todo o suporte que os criadores de plugin precisam, eles então podem focar no que importa: os detalhes dos bancos de dados.
+Mas como fazer isso? É impossível para um time fazer isso sozinho. E sobre a complexidade e o tamanho do pacote? Seria insano e ineficaz. Então nós escolhemos fazer uma OM **plugavel**, nós fazemos o básico e providênciamos todo o suporte que os criadores de plugin precisam, eles então podem focar no que importa: os detalhes dos bancos de dados.
 
 Nossa meta aqui é ser a ponte entre os usuários e os desenvolvedores de plugin, fácilitando a comunicação e o entendimento entre si. Com isso, todos ganham, e o desenvolvimento de tudo pode ser dividido e acelerado.
 

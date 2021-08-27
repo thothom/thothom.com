@@ -14,7 +14,7 @@ function HomepageHeader() {
       <div className="container">
         <h1 className="hero__title">{siteConfig.title}</h1>
         <p className="hero__subtitle">
-          <Translate>The Ultimate ORM For All Databases</Translate>
+          <Translate>The Ultimate OM For All Databases</Translate>
         </p>
         <div className={styles.buttons}>
           <Link
@@ -33,7 +33,7 @@ export default function Home() {
     <Layout
       description={
         translate({
-          message: 'The ultimate ORM for all databases',
+          message: 'The ultimate OM for all databases',
           description: 'The site description head tag content',
         })
       }>

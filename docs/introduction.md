@@ -4,7 +4,7 @@ sidebar_position: 0
 
 # Introduction
 
-Cosmos is an **Object Mapper**, that is an [ORM + ODM](https://medium.com/spidernitt/orm-and-odm-a-brief-introduction-369046ec57eb) built in TypeScript and inspired on [TypeORM syntax](https://github.com/typeorm/typeorm) and [ESLint plugable approach](https://eslint.org/).
+Symbiosis is an **Object Mapper**, is an _Object Mapper_([ORM + ODM](https://medium.com/spidernitt/orm-and-odm-a-brief-introduction-369046ec57eb)) built in TypeScript and inspired on [TypeORM syntax](https://github.com/typeorm/typeorm) and [ESLint plugable approach](https://eslint.org/).
 
 Our intention here is standardize the connection and implementation of **every database** with the best performance possible, and for this, we use an plugable approach, so more people can contribute and create their own integration. This package alone can't do anything besides typing, the plugins do all the "dirt work".
 
@@ -16,9 +16,9 @@ In recent years, a lot of new databases are being created and a lot more of data
 
 To handle all this databases, the developers must learn from the scratch how to use the provided sdk, how to make queries, how to setup the database, and a bunch of information non-related to the product or to the systems that they are building, forcing then to wast precious time and money.
 
-With these problems in mind, we come with the solution: A ORM that can communicate with **ALL** databases, using the same syntax, the same methods, and the same configuration.
+With these problems in mind, we come with the solution: A OM that can communicate with **ALL** databases, using the same syntax, the same methods, and the same configuration.
 
-But how to do this? It's impossible to only one team do this alone. And what about the complexity and the package size? It would be insanity inefficient. So we choose to make an **plugable** ORM, we handle the basics and provide all the support that the plugin creators need, so they can focus on what is really important: the database stuff.
+But how to do this? It's impossible to only one team do this alone. And what about the complexity and the package size? It would be insanity inefficient. So we choose to make an **plugable** OM, we handle the basics and provide all the support that the plugin creators need, so they can focus on what is really important: the database stuff.
 
 Our goal here is to be the bridge from user to plugin-developer, making easy to then to communicate and understand each other. With this, everyone wins, and the development of everything can be spliced and accelerated.
 

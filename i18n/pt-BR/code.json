@@ -163,20 +163,20 @@
     "message": "Começando",
     "description": "The message of the button that redirects to the docs"
   },
-  "The Ultimate ORM For All Databases": {
-    "message": "O Melhor ORM Para Todos Os Bancos De Dados",
+  "The Ultimate OM For All Databases": {
+    "message": "O Melhor OM Para Todos Os Bancos De Dados",
     "description": "The site description head tag content"
   },
-  "The Cosmos syntax is heavily inspired by TypeORM, one of the most popular ORMs in the TypeScript community. To migrate from TypeORM is easy, and most of the things and how to use are very familiar.": {
-    "message": "A sintaxe do Cosmos é fortemente inspirada pelo TypeORM, um dos mais populares ORMs da comunidade TypeScript. Para migrar a partir do TypeORM é simples, e a maior parte das coisas e o jeito de usar são bem parecidos.",
-    "description": "The explanation about why Cosmos is easy to use"
+  "The Symbiosis syntax is heavily inspired by TypeORM, one of the most popular OMs in the TypeScript community. To migrate from TypeORM is easy, and most of the things and how to use are very familiar.": {
+    "message": "A sintaxe do Symbiosis é fortemente inspirada pelo TypeORM, um dos mais populares OMs da comunidade TypeScript. Para migrar a partir do TypeORM é simples, e a maior parte das coisas e o jeito de usar são bem parecidos.",
+    "description": "The explanation about why Symbiosis is easy to use"
   },
-  "Cosmos is designed to decrease the learning curve of databases to the ground, so one time that you learn to use Cosmos, you will be able to use any database with almost any changes.": {
-    "message": "Cosmos foi projetado para diminuir a curva de aprendizado das databases o maximo possivel, então uma vez que você aprendar a usar o Cosmos, você conseguirá usar qualquer database com quase nenhuma alteração.",
-    "description": "The explanation of why Cosmos is fast to learn"
+  "Symbiosis is designed to decrease the learning curve of databases to the ground, so one time that you learn to use Symbiosis, you will be able to use any database with almost any changes.": {
+    "message": "Symbiosis foi projetado para diminuir a curva de aprendizado das databases o maximo possivel, então uma vez que você aprendar a usar o Symbiosis, você conseguirá usar qualquer database com quase nenhuma alteração.",
+    "description": "The explanation of why Symbiosis is fast to learn"
   },
   "You don't need to await us to add support to any database. The community can do it! You can do it! We provide full support to who wants to create a plugin, and we keep a complete documentation about how to create one.": {
     "message": "Você não precisa esperar que nós adicionemos suporte a algum banco de dados. A comunidade pode fazer isso! Você pode fazer isso! Nós damos suporte total a quem q quiser fazer um plugin, e mantemos uma documentação completa sobre como criar um.",
-    "description": "The explanation of the advantages of Cosmos beign plugable"
+    "description": "The explanation of the advantages of Symbiosis beign plugable"
   }
 }
