@@ -3,20 +3,20 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
-  title: "Techmmunity Cosmos",
-  tagline: "The Ultimate ORM For All Databases",
-  url: "https://cosmos.techmmunity.com.br",
+  title: "Techmmunity Symbiosis",
+  tagline: "The Ultimate OM For All Databases",
+  url: "https://symbiosis.techmmunity.com.br",
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
   organizationName: "techmmunity", // Usually your GitHub org/user name.
-  projectName: "cosmos", // Usually your repo name.
+  projectName: "symbiosis", // Usually your repo name.
   themeConfig: {
     navbar: {
-      title: "Cosmos ORM",
+      title: "Symbiosis OM",
       logo: {
-        alt: "Cosmos ORM",
+        alt: "Symbiosis OM",
         src: "img/logo.svg",
       },
       items: [
@@ -32,7 +32,7 @@ module.exports = {
           position: "left",
         },
         {
-          href: "https://github.com/techmmunity/cosmos",
+          href: "https://github.com/techmmunity/symbiosis",
           label: "GitHub",
           position: "right",
         },
@@ -59,7 +59,7 @@ module.exports = {
           items: [
             {
               label: "Stack Overflow",
-              href: "https://stackoverflow.com/questions/tagged/techmmunity-cosmos",
+              href: "https://stackoverflow.com/questions/tagged/techmmunity-symbiosis",
             },
             {
               label: "Discord",
@@ -76,7 +76,7 @@ module.exports = {
             },
             {
               label: "GitHub",
-              href: "https://github.com/techmmunity/cosmos",
+              href: "https://github.com/techmmunity/symbiosis",
             },
           ],
         },
@@ -96,13 +96,13 @@ module.exports = {
           sidebarPath: require.resolve("./sidebars.js"),
           // Please change this to your repo.
           editUrl:
-            "https://github.com/techmmunity/cosmos.techmmunity.com/edit/master/",
+            "https://github.com/techmmunity/symbiosis.techmmunity.com/edit/master/",
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           editUrl:
-            "https://github.com/techmmunity/cosmos.techmmunity.com/edit/master/blog/",
+            "https://github.com/techmmunity/symbiosis.techmmunity.com/edit/master/blog/",
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),

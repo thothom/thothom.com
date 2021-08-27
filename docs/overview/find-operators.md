@@ -21,7 +21,7 @@ By default, we recommend to the plugin creators to accept at least `number` as p
 Example:
 
 ```ts
-import { Between } from "@techmmunity/cosmos";
+import { Between } from "@techmmunity/symbiosis";
 
 import { exampleRepository } from "./example.repository";
 
@@ -41,7 +41,7 @@ exampleRepository.find({
 Example:
 
 ```ts
-import { EndsWith } from "@techmmunity/cosmos";
+import { EndsWith } from "@techmmunity/symbiosis";
 
 import { exampleRepository } from "./example.repository";
 
@@ -75,7 +75,7 @@ Some databases don't accept this kind of query, so check it at the plugin docume
 Example:
 
 ```ts
-import { Exist } from "@techmmunity/cosmos";
+import { Exist } from "@techmmunity/symbiosis";
 
 import { exampleRepository } from "./example.repository";
 
@@ -103,7 +103,7 @@ Please check it at the plugin documentation.
 Example:
 
 ```ts
-import { In } from "@techmmunity/cosmos";
+import { In } from "@techmmunity/symbiosis";
 
 import { exampleRepository } from "./example.repository";
 
@@ -123,7 +123,7 @@ exampleRepository.find({
 Example:
 
 ```ts
-import { IsNull } from "@techmmunity/cosmos";
+import { IsNull } from "@techmmunity/symbiosis";
 
 import { exampleRepository } from "./example.repository";
 
@@ -149,7 +149,7 @@ This operator **can't** be combined with the `Not` operator. Use the [`MoreThanO
 Example:
 
 ```ts
-import { LessThan } from "@techmmunity/cosmos";
+import { LessThan } from "@techmmunity/symbiosis";
 
 import { exampleRepository } from "./example.repository";
 
@@ -175,7 +175,7 @@ This operator **can't** be combined with the `Not` operator. Use the [`MoreThan`
 Example:
 
 ```ts
-import { LessThanOrEqual } from "@techmmunity/cosmos";
+import { LessThanOrEqual } from "@techmmunity/symbiosis";
 
 import { exampleRepository } from "./example.repository";
 
@@ -201,7 +201,7 @@ The value is **case sensitive**!
 Example:
 
 ```ts
-import { Like } from "@techmmunity/cosmos";
+import { Like } from "@techmmunity/symbiosis";
 
 import { exampleRepository } from "./example.repository";
 
@@ -227,7 +227,7 @@ This operator **can't** be combined with the `Not` operator. Use the [`LessThanO
 Example:
 
 ```ts
-import { MoreThan } from "@techmmunity/cosmos";
+import { MoreThan } from "@techmmunity/symbiosis";
 
 import { exampleRepository } from "./example.repository";
 
@@ -253,7 +253,7 @@ This operator **can't** be combined with the `Not` operator. Use the [`LessThan`
 Example:
 
 ```ts
-import { MoreThanOrEqual } from "@techmmunity/cosmos";
+import { MoreThanOrEqual } from "@techmmunity/symbiosis";
 
 import { exampleRepository } from "./example.repository";
 
@@ -273,7 +273,7 @@ exampleRepository.find({
 Example with simple value:
 
 ```ts
-import { Not } from "@techmmunity/cosmos";
+import { Not } from "@techmmunity/symbiosis";
 
 import { exampleRepository } from "./example.repository";
 
@@ -289,7 +289,7 @@ exampleRepository.find({
 Example combine with other operator:
 
 ```ts
-import { Not, In } from "@techmmunity/cosmos";
+import { Not, In } from "@techmmunity/symbiosis";
 
 import { exampleRepository } from "./example.repository";
 
@@ -309,7 +309,7 @@ exampleRepository.find({
 Example:
 
 ```ts
-import { StartsWith } from "@techmmunity/cosmos";
+import { StartsWith } from "@techmmunity/symbiosis";
 
 import { exampleRepository } from "./example.repository";
 

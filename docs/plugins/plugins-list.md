@@ -10,16 +10,16 @@ If you want to create your own plugin, see [this docs](../create-plugin/first-st
 
 ## Bigtable
 
-- [@techmmunity/cosmos-bigtable](./bigtable)
+- [@techmmunity/symbiosis-bigtable](./bigtable)
 
 ## DynamoDB
 
-- [@techmmunity/cosmos-dynamo](./dynamo)
+- [@techmmunity/symbiosis-dynamo](./dynamo)
 
 ## MongoDB
 
-- [@techmmunity/cosmos-mongo](./mongo)
+- [@techmmunity/symbiosis-mongo](./mongo)
 
 ## Redis
 
-- [@techmmunity/cosmos-redis](./redis)
+- [@techmmunity/symbiosis-redis](./redis)
