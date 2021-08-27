@@ -1,82 +1,82 @@
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const lightCodeTheme = require("prism-react-renderer/themes/github");
+const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
-  title: 'Techmmunity Compass',
-  tagline: 'The Ultimate ORM For All Databases',
-  url: 'https://compass.techmmunity.com.br',
-  baseUrl: '/',
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.ico',
-  organizationName: 'techmmunity', // Usually your GitHub org/user name.
-  projectName: 'compass', // Usually your repo name.
+  title: "Techmmunity Cosmos",
+  tagline: "The Ultimate ORM For All Databases",
+  url: "https://cosmos.techmmunity.com.br",
+  baseUrl: "/",
+  onBrokenLinks: "throw",
+  onBrokenMarkdownLinks: "warn",
+  favicon: "img/favicon.ico",
+  organizationName: "techmmunity", // Usually your GitHub org/user name.
+  projectName: "cosmos", // Usually your repo name.
   themeConfig: {
     navbar: {
-      title: 'Compass ORM',
+      title: "Cosmos ORM",
       logo: {
-        alt: 'Compass ORM',
-        src: 'img/logo.svg',
+        alt: "Cosmos ORM",
+        src: "img/logo.svg",
       },
       items: [
         {
-          type: 'doc',
-          docId: 'introduction',
-          position: 'left',
-          label: 'Docs',
+          type: "doc",
+          docId: "introduction",
+          position: "left",
+          label: "Docs",
         },
         {
-          to: '/blog',
-          label: 'Blog',
-          position: 'left'
+          to: "/blog",
+          label: "Blog",
+          position: "left",
         },
         {
-          href: 'https://github.com/techmmunity/compass',
-          label: 'GitHub',
-          position: 'right',
+          href: "https://github.com/techmmunity/cosmos",
+          label: "GitHub",
+          position: "right",
         },
         {
-          type: 'localeDropdown',
-          position: 'right',
+          type: "localeDropdown",
+          position: "right",
         },
       ],
     },
     footer: {
-      style: 'dark',
+      style: "dark",
       links: [
         {
-          title: 'Docs',
+          title: "Docs",
           items: [
             {
-              label: 'Tutorial',
-              to: '/docs/introduction',
+              label: "Tutorial",
+              to: "/docs/introduction",
             },
           ],
         },
         {
-          title: 'Community',
+          title: "Community",
           items: [
             {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/techmmunity-compass',
+              label: "Stack Overflow",
+              href: "https://stackoverflow.com/questions/tagged/techmmunity-cosmos",
             },
             {
-              label: 'Discord',
-              href: 'https://discord.gg/5hPnJzzAe2',
+              label: "Discord",
+              href: "https://discord.gg/5hPnJzzAe2",
             },
           ],
         },
         {
-          title: 'More',
+          title: "More",
           items: [
             {
-              label: 'Blog',
-              to: '/blog',
+              label: "Blog",
+              to: "/blog",
             },
             {
-              label: 'GitHub',
-              href: 'https://github.com/techmmunity/compass',
+              label: "GitHub",
+              href: "https://github.com/techmmunity/cosmos",
             },
           ],
         },
@@ -90,28 +90,28 @@ module.exports = {
   },
   presets: [
     [
-      '@docusaurus/preset-classic',
+      "@docusaurus/preset-classic",
       {
         docs: {
-          sidebarPath: require.resolve('./sidebars.js'),
+          sidebarPath: require.resolve("./sidebars.js"),
           // Please change this to your repo.
           editUrl:
-            'https://github.com/techmmunity/compass.techmmunity.com/edit/master/',
+            "https://github.com/techmmunity/cosmos.techmmunity.com/edit/master/",
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           editUrl:
-            'https://github.com/techmmunity/compass.techmmunity.com/edit/master/blog/',
+            "https://github.com/techmmunity/cosmos.techmmunity.com/edit/master/blog/",
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: require.resolve("./src/css/custom.css"),
         },
       },
     ],
   ],
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en', 'pt-BR'],
+    defaultLocale: "en",
+    locales: ["en", "pt-BR"],
   },
 };
