@@ -19,7 +19,7 @@ jobs:
         run: yarn build
 
       - name: Deploy S3
-        uses: pukonu/action-deploy-webapp-aws@v.1.0
+        uses: techmmunity/action-deploy-static-webapp-aws@1.0.0
         with:
           build_path: "./build"
           bucket_name: ${{ secrets.S3_BUCKET }}
