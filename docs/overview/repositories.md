@@ -34,11 +34,11 @@ const exampleRepository = connection.getRepository(ExampleEntity);
 The save methods makes an **"upsert"** query, that is:
 
 - If a record with the same primary keys **doesn't exist**, it will be created
-- If a record with the same primary keys **exist**, it will be updated
+- If a record with the same primary keys **exist**, it will be updated (or **replaced**, depending on the plugin)
 
 :::tip
 
-In the most of the databases, this is the most performative query to create / update, so if you don't want to **specifically** insert or update, we always recommend to use this method.
+In the most of the databases, this is the most performative query to create / update / replace, so if you don't want to **specifically** insert or update, we always recommend to use this method.
 
 :::
 
@@ -61,6 +61,14 @@ createExample({
 
 Inserts a new record to the table. If a record with the same primary keys already exist, throw an error.
 
+:::caution
+
+This may will do to 2 queries internally instead of 1.
+
+**Obs:** This is a limitation from the databases, not from Symbiosis, ok? :wink:
+
+:::
+
 ```ts
 import { ExampleEntity } from "./example.entity";
 import { exampleRepository } from "./example.repository";
@@ -82,11 +90,11 @@ createExample({
 
 ### `update`
 
-Updates many records of the table based on a query condition.
+Updates one or many records of the table based on a query condition.
 
 :::caution
 
-Always try to make queries by primary keys, otherwise the queries will be **extremely** unperformative.
+Always try to make queries by primary keys, otherwise the queries will be **very unperformative**.
 
 **Obs:** This is a limitation from the databases, not from Symbiosis, ok? :wink:
 
@@ -121,16 +129,12 @@ import { ExampleEntity } from "./example.entity";
 import { exampleRepository } from "./example.repository";
 
 const crateOrUpdateExample = async (data: ExampleEntity) => {
-  try {
-    const example = await exampleRepository.upsert(data);
+  const example = await exampleRepository.upsert(data);
 
-    return example;
-  } catch (err) {
-    // If the record doesn't exist
-  }
+  return example;
 };
 
-updateExample({
+crateOrUpdateExample({
   id: 123,
   foo: "bar",
 });
@@ -152,31 +156,17 @@ Find multiple records by a query condition.
 
 :::caution
 
-Always try to make queries by primary keys, otherwise the queries will be **extremely** unperformative.
+Always try to make queries by primary keys, otherwise the queries will be **extremely unperformative**.
 
 **Obs:** This is a limitation from the databases, not from Symbiosis, ok? :wink:
 
 :::
 
 ```ts
-import { ExampleEntity } from "./example.entity";
-import { exampleRepository } from "./example.repository";
-
-const findExamples = async (condition: Partial<ExampleEntity>) => {
-  const examples = await exampleRepository.find(condition);
-
-  return examples;
-};
-
-findExamples({
-  age: 25,
-});
-
-// Or
-
 import { FindOptions } from "@techmmunity/symbiosis";
+import { ExampleEntity } from "./example.entity";
 
-const findExamples = async (findOptions: FindOptions) => {
+const findExamples = async (findOptions: FindOptions<ExampleEntity>) => {
   const examples = await exampleRepository.find(findOptions);
 
   return examples;
@@ -195,32 +185,19 @@ Find one record by a query condition.
 
 :::caution
 
-Always try to make queries by primary keys, otherwise the queries will be **extremely** unperformative.
+Always try to make queries by primary keys, otherwise the queries will be **extremely unperformative**.
 
 **Obs:** This is a limitation from the databases, not from Symbiosis, ok? :wink:
 
 :::
 
 ```ts
+import { FindOneOptions } from "@techmmunity/symbiosis";
 import { ExampleEntity } from "./example.entity";
 import { exampleRepository } from "./example.repository";
 
-const findExample = async (condition: Partial<ExampleEntity>) => {
+const findExample = async (condition: FindOneOptions<ExampleEntity>) => {
   const example = await exampleRepository.findOne(condition);
-
-  return example;
-};
-
-findExample({
-  age: 25,
-});
-
-// Or
-
-import { FindOptions } from "@techmmunity/symbiosis";
-
-const findExample = async (findOptions: FindOptions) => {
-  const example = await exampleRepository.find(findOptions);
 
   return example;
 };
@@ -244,21 +221,22 @@ findExample({
 
 ### `delete`
 
-Delete multiple records by a query condition.
+Delete one or many records by a query condition.
 
 :::caution
 
-Always try to make queries by primary keys, otherwise the queries will be **extremely** unperformative.
+Always try to make queries by primary keys, otherwise the queries will be **extremely unperformative**.
 
 **Obs:** This is a limitation from the databases, not from Symbiosis, ok? :wink:
 
 :::
 
 ```ts
+import { FindConditions } from "@techmmunity/symbiosis";
 import { ExampleEntity } from "./example.entity";
 import { exampleRepository } from "./example.repository";
 
-const deleteExamples = async (condition: Partial<ExampleEntity>) => {
+const deleteExamples = async (condition: FindConditions<ExampleEntity>) => {
   const examples = await exampleRepository.delete(condition);
 
   return examples;
@@ -267,27 +245,11 @@ const deleteExamples = async (condition: Partial<ExampleEntity>) => {
 deleteExamples({
   id: 123,
 });
-
-// Or
-
-import { FindOptions } from "@techmmunity/symbiosis";
-
-const deleteExamples = async (findOptions: FindOptions) => {
-  const examples = await exampleRepository.delete(findOptions);
-
-  return examples;
-};
-
-deleteExamples({
-  where: {
-    age: 25,
-  },
-});
 ```
 
 ### `softDelete`
 
-Soft delete multiple records by a query condition.
+Soft delete one or many records by a query condition.
 
 :::caution
 
@@ -297,17 +259,18 @@ To use this method, the entity must have a column decorated with [`@DeleteDateCo
 
 :::caution
 
-Always try to make queries by primary keys, otherwise the queries will be **extremely** unperformative.
+Always try to make queries by primary keys, otherwise the queries will be **extremely unperformative**.
 
 **Obs:** This is a limitation from the databases, not from Symbiosis, ok? :wink:
 
 :::
 
 ```ts
+import { FindConditions } from "@techmmunity/symbiosis";
 import { ExampleEntity } from "./example.entity";
 import { exampleRepository } from "./example.repository";
 
-const deleteExamples = async (condition: Partial<ExampleEntity>) => {
+const deleteExamples = async (condition: FindConditions<ExampleEntity>) => {
   const examples = await exampleRepository.softDelete(condition);
 
   return examples;
@@ -316,27 +279,11 @@ const deleteExamples = async (condition: Partial<ExampleEntity>) => {
 deleteExamples({
   id: 123,
 });
-
-// Or
-
-import { FindOptions } from "@techmmunity/symbiosis";
-
-const deleteExamples = async (findOptions: FindOptions) => {
-  const examples = await exampleRepository.softDelete(findOptions);
-
-  return examples;
-};
-
-deleteExamples({
-  where: {
-    age: 25,
-  },
-});
 ```
 
 ### `recover`
 
-Recover records that were soft deleted, filtering by a query condition.
+Recover records that was soft deleted, filtering by a query condition.
 
 :::caution
 
@@ -346,17 +293,18 @@ To use this method, the entity must have a column decorated with [`@DeleteDateCo
 
 :::caution
 
-Always try to make queries by primary keys, otherwise the queries will be **extremely** unperformative.
+Always try to make queries by primary keys, otherwise the queries will be **very unperformative**.
 
 **Obs:** This is a limitation from the databases, not from Symbiosis, ok? :wink:
 
 :::
 
 ```ts
+import { FindConditions } from "@techmmunity/symbiosis";
 import { ExampleEntity } from "./example.entity";
 import { exampleRepository } from "./example.repository";
 
-const recoverExamples = async (condition: Partial<ExampleEntity>) => {
+const recoverExamples = async (condition: FindConditions<ExampleEntity>) => {
   const examples = await exampleRepository.recover(condition);
 
   return examples;
@@ -364,22 +312,6 @@ const recoverExamples = async (condition: Partial<ExampleEntity>) => {
 
 recoverExamples({
   id: 123,
-});
-
-// Or
-
-import { FindOptions } from "@techmmunity/symbiosis";
-
-const recoverExamples = async (findOptions: FindOptions) => {
-  const examples = await exampleRepository.recover(findOptions);
-
-  return examples;
-};
-
-recoverExamples({
-  where: {
-    age: 25,
-  },
 });
 ```
 
@@ -399,17 +331,18 @@ Count the records returned by a query condition.
 
 :::caution
 
-Always try to make queries by primary keys, otherwise the queries will be **extremely** unperformative.
+Always try to make queries by primary keys, otherwise the queries will be **extremely unperformative**.
 
 **Obs:** This is a limitation from the databases, not from Symbiosis, ok? :wink:
 
 :::
 
 ```ts
+import { FindConditions } from "@techmmunity/symbiosis";
 import { ExampleEntity } from "./example.entity";
 import { exampleRepository } from "./example.repository";
 
-const countExamples = async (condition: Partial<ExampleEntity>) => {
+const countExamples = async (condition: FindConditions<ExampleEntity>) => {
   const examples = await exampleRepository.count(condition);
 
   return examples;
@@ -417,22 +350,6 @@ const countExamples = async (condition: Partial<ExampleEntity>) => {
 
 countExamples({
   id: 123,
-});
-
-// Or
-
-import { FindOptions } from "@techmmunity/symbiosis";
-
-const countExamples = async (findOptions: FindOptions) => {
-  const examples = await exampleRepository.count(findOptions);
-
-  return examples;
-};
-
-countExamples({
-  where: {
-    age: 25,
-  },
 });
 ```
 
@@ -453,10 +370,11 @@ In some database, like PostgreSQL, this is a way to perform a count operation th
 :::
 
 ```ts
+import { FindConditions } from "@techmmunity/symbiosis";
 import { ExampleEntity } from "./example.entity";
 import { exampleRepository } from "./example.repository";
 
-const countExamples = async (condition: Partial<ExampleEntity>) => {
+const countExamples = async (condition: FindConditions<ExampleEntity>) => {
   const examples = await exampleRepository.performativeCount(condition);
 
   return examples;
@@ -464,22 +382,6 @@ const countExamples = async (condition: Partial<ExampleEntity>) => {
 
 countExamples({
   id: 123,
-});
-
-// Or
-
-import { FindOptions } from "@techmmunity/symbiosis";
-
-const countExamples = async (findOptions: FindOptions) => {
-  const examples = await exampleRepository.performativeCount(findOptions);
-
-  return examples;
-};
-
-countExamples({
-  where: {
-    age: 25,
-  },
 });
 ```
 
@@ -505,9 +407,17 @@ Ex: `"entityColumn.subEntityColumn"`
 
 :::
 
+:::info
+
+Array values doesn't need any special character, just pass they normally, like you do with nested values.
+
+Ex: `"entityArrayColumn.subEntityColumn"`
+
+:::
+
 ```ts
 const conditions = {
-  select: ["id", "age"];
+  select: ["id", "fullName"];
 }
 ```
 
@@ -558,6 +468,16 @@ const conditions = {
 };
 ```
 
+### `index`
+
+The index to use to query.
+
+```ts
+const conditions = {
+  index: "email_index,
+};
+```
+
 ### `withDeleted`
 
 If the query should bring soft-deleted records.
@@ -574,19 +494,19 @@ Used to make paginated queries, tells how many records should be ignored from th
 
 :::caution
 
-This option is only available on "find many" queries.
+This option is only available on `.find()` queries.
 
 :::
 
 :::caution
 
-This option may isn't available for the most of the NoSql databases, use the [`fromRecord`](#fromrecord) option instead.
+This option may isn't available for the most of the NoSql databases, use the [`startFrom`](#startfrom) option instead.
 
 :::
 
 :::caution
 
-This options is **extremely** unperformative, we recommend the use of [`fromRecord`](#fromrecord) option instead.
+This options is **extremely** unperformative, we recommend the use of [`startFrom`](#startfrom) option instead.
 
 :::
 
@@ -596,19 +516,21 @@ const conditions = {
 };
 ```
 
-### `fromRecord`
+### `startFrom`
 
 Used to make paginated queries, tells from which record the query should be made.
 
 :::tip
 
-In the most of the databases, this is the most performative way to make a paginated query!
+In the most of the databases, this is the most performative way to make a paginated query! 🤩
 
 :::
 
 ```ts
 const conditions = {
-  fromRecord: "record-primary-key",
+  fromRecord: {
+    id: 100,
+  },
 };
 ```
 
@@ -632,7 +554,7 @@ const conditions = {
 <!-- ################################ -->
 <!-- ################################ -->
 
-Every method receives a second (or third, it will be always the last one) parameter `options`. This options can configure some behaviors of the ORM, and can make the developers life more smooth.
+Every method receives a second (or third, it will be always the last one) parameter `options`. These options can configure some behaviors of the query, and can make the developers life easier.
 
 ### `retries`
 
