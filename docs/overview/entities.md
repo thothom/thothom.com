@@ -1,10 +1,10 @@
 ---
-sidebar_position: 3
+sidebar_position: 4
 ---
 
-# Schemas
+# Entities
 
-Schemas are the things use to describe your database structure.
+Entities are the things use to describe your database structure.
 
 They are made with `decorators`, and here is a list of all of they:
 
@@ -221,13 +221,7 @@ If the default value is a function, **it cannot return a Promise**, it must just
 
 Date columns that will be automatically generated on **saving a record** to the database.
 
-This decorator accepts columns with [simple types](#simple-types), and will generate a value based on this type.
-
-| type   | value format | value example                                       |
-| ------ | ------------ | --------------------------------------------------- |
-| String | ISO          | `"2021-08-14T12:06:38.228Z"`                        |
-| Number | Epoch        | `1628942827629`                                     |
-| Date   | Date Object  | An date instance that will be handled by the plugin |
+This decorator accepts columns with [simple types](#simple-types), and will [generate a value](#date-formats) based on this type.
 
 :::info
 
@@ -243,13 +237,7 @@ The values are affected by the `timeZone` config at the connection.
 
 Date columns that will be automatically generated on **updating a record** to the database.
 
-This decorator accepts columns with [simple types](#simple-types), and will generate a value based on this type.
-
-| type   | value format | value example                                       |
-| ------ | ------------ | --------------------------------------------------- |
-| String | ISO          | `"2021-08-14T12:06:38.228Z"`                        |
-| Number | Epoch        | `1628942827629`                                     |
-| Date   | Date Object  | An date instance that will be handled by the plugin |
+This decorator accepts columns with [simple types](#simple-types), and will [generate a value](#date-formats) based on this type.
 
 :::info
 
@@ -265,13 +253,7 @@ The values are affected by the `timeZone` config at the connection.
 
 Date columns that will be automatically generated on **soft-deleting a record** to the database.
 
-This decorator accepts columns with [simple types](#simple-types), and will generate a value based on this type.
-
-| type   | value format | value example                                       |
-| ------ | ------------ | --------------------------------------------------- |
-| String | ISO          | `"2021-08-14T12:06:38.228Z"`                        |
-| Number | Epoch        | `1628942827629`                                     |
-| Date   | Date Object  | An date instance that will be handled by the plugin |
+This decorator accepts columns with [simple types](#simple-types), and will [generate a value](#date-formats) based on this type.
 
 :::info
 
@@ -337,6 +319,10 @@ Semi-Complex types are `Array` and **custom classes**.
 
 Complex types are an **`Array` OF custom classes**.
 
-```
+### Date formats
 
-```
+| type   | value format | value example                                       |
+| ------ | ------------ | --------------------------------------------------- |
+| String | ISO          | `"2021-08-14T12:06:38.228Z"`                        |
+| Number | Epoch        | `1628942827629`                                     |
+| Date   | Date Object  | An date instance that will be handled by the plugin |

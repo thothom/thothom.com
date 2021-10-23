@@ -15,7 +15,7 @@ yarn add @techmmunity/symbiosis reflect-metadata
 With NPM:
 
 ```
-npm i --save @techmmunity/symbiosis reflect-metadata
+npm i @techmmunity/symbiosis reflect-metadata
 ```
 
 :::danger
@@ -24,11 +24,22 @@ The installation is not over yet, you still need a plugin!
 
 :::
 
+Configure `tsconfig.json`:
+
+```json
+{
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
+  }
+}
+```
+
 ## Plugins
 
-As mentioned in the introduction, Techmmunity Symbiosis works with plugins. You can find a complete list of official and recommended plugins [right here](../plugins/plugins-list), or a list of all plugins [right here](https://www.npmjs.com/search?q=keywords:techmmunity-symbiosis).
+As mentioned in the introduction, Techmmunity Symbiosis works with plugins. You can find a complete list of official and recommended plugins [right here](../overview/plugins), or a list of all plugins [right here](https://www.npmjs.com/search?q=keywords:techmmunity-symbiosis).
 
-## Use
+## Usage
 
 ### Create your Entity And Repository Type
 

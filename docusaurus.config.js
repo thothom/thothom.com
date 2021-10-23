@@ -27,11 +27,6 @@ module.exports = {
           label: "Docs",
         },
         {
-          to: "/blog",
-          label: "Blog",
-          position: "left",
-        },
-        {
           href: "https://github.com/techmmunity/symbiosis",
           label: "GitHub",
           position: "right",
@@ -58,10 +53,6 @@ module.exports = {
           title: "Community",
           items: [
             {
-              label: "Stack Overflow",
-              href: "https://stackoverflow.com/questions/tagged/techmmunity-symbiosis",
-            },
-            {
               label: "Discord",
               href: "https://discord.gg/5hPnJzzAe2",
             },
@@ -70,10 +61,6 @@ module.exports = {
         {
           title: "More",
           items: [
-            {
-              label: "Blog",
-              to: "/blog",
-            },
             {
               label: "GitHub",
               href: "https://github.com/techmmunity/symbiosis",
@@ -87,6 +74,19 @@ module.exports = {
       theme: lightCodeTheme,
       darkTheme: darkCodeTheme,
     },
+    colorMode: {
+      defaultMode: "dark",
+      disableSwitch: true,
+      respectPrefersColorScheme: false,
+    },
+    announcementBar: {
+      id: 'contributors',
+      content:
+        'We need contributors, please <a href="/docs/contributing/first-steps">help us!</a>',
+      backgroundColor: 'rgb(15, 211, 211)',
+      textColor: '#101920',
+      isCloseable: false,
+    },
   },
   presets: [
     [
@@ -97,12 +97,6 @@ module.exports = {
           // Please change this to your repo.
           editUrl:
             "https://github.com/techmmunity/symbiosis.techmmunity.com/edit/master/",
-        },
-        blog: {
-          showReadingTime: true,
-          // Please change this to your repo.
-          editUrl:
-            "https://github.com/techmmunity/symbiosis.techmmunity.com/edit/master/blog/",
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
