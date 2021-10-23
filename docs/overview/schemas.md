@@ -26,7 +26,7 @@ Example of a table:
 
 ```ts
 @Entity()
-class ExampleEntity {}
+export class ExampleEntity {}
 ```
 
 Example of a sub-entity:
@@ -36,7 +36,7 @@ Example of a sub-entity:
 class ExampleSubEntity {}
 
 @Entity()
-class ExampleEntity {
+export class ExampleEntity {
   @Column()
   subEntity: ExampleSubEntity;
 }
@@ -62,7 +62,7 @@ class ExampleEntity {}
 
 :::caution
 
-This name **isn't affected** by the `namingStrategy` of the connection.
+This name **isn't affected** by the `namingStrategy`, `prefix` or `suffix` of the connection.
 
 :::
 
@@ -110,26 +110,7 @@ Use this decorator at your primary columns, that you want to be generated **by T
 
 :::caution
 
-Primary columns only accept [**simple types**](#simple-types)! Types like arrays, objects, classes will throw an error!
-
-:::
-
-#### `name`
-
-The name of the column in the database.
-
-```ts
-class ExampleEntity {
-  @PrimaryGeneratedColumn({
-    name: "custom_name",
-  })
-  id: string;
-}
-```
-
-:::caution
-
-This name **isn't affected** by the `namingStrategy` of the connection.
+Primary columns only accept `string` and `number` as type! Types like arrays, objects, boolean and classes will throw an error!
 
 :::
 
@@ -157,21 +138,6 @@ class ExampleEntity {
 }
 ```
 
-#### `extras`
-
-Extra data that may be required by plugins.
-
-```ts
-class ExampleEntity {
-  @PrimaryGeneratedColumn({
-    extras: {
-      foo: "bar",
-    },
-  })
-  id: string;
-}
-```
-
 <!-- ################################ -->
 <!-- ################################ -->
 <!-- ################################ -->
@@ -187,43 +153,9 @@ Use this decorator at your primary columns, that you want to be generated **manu
 
 :::caution
 
-Primary columns only accept [**simple types**](#simple-types)! Types like arrays, objects, classes will throw an error!
+Primary columns only accept `string` and `number` as type! Types like arrays, objects, boolean and classes will throw an error!
 
 :::
-
-#### `name`
-
-The name of the column in the database.
-
-```ts
-class ExampleEntity {
-  @PrimaryColumn({
-    name: "custom_name",
-  })
-  id: string;
-}
-```
-
-:::caution
-
-This name **isn't affected** by the `namingStrategy` of the connection.
-
-:::
-
-#### `extras`
-
-Extra data that may be required by plugins.
-
-```ts
-class ExampleEntity {
-  @PrimaryColumn({
-    extras: {
-      foo: "bar",
-    },
-  })
-  id: string;
-}
-```
 
 <!-- ################################ -->
 <!-- ################################ -->
@@ -232,25 +164,6 @@ class ExampleEntity {
 ### `@Column`
 
 Use this decorator for almost all of your columns. It's a generic decorator.
-
-#### `name`
-
-The name of the column in the database.
-
-```ts
-class ExampleEntity {
-  @Column({
-    name: "custom_name",
-  })
-  foo: string;
-}
-```
-
-:::caution
-
-This name **isn't affected** by the `namingStrategy` of the connection.
-
-:::
 
 #### `type`
 
@@ -278,20 +191,27 @@ class ExampleEntity {
 }
 ```
 
-#### `extras`
+#### `enum`
 
-Extra data that may be required by plugins.
+A enum to get the values of. **It's a required field** if you use a enum as type.
 
-```ts
-class ExampleEntity {
-  @Column({
-    extras: {
-      foo: "bar",
-    },
-  })
-  foo: string;
-}
-```
+:::caution
+
+Symbiosis **NOT** validate if the values passed on the repository methods are the same as the enum!
+
+:::
+
+#### `defaultValue`
+
+The default value that the column will have on inserting it on the database.
+
+It can a true raw value, or a function that receive zero parameters and return the value
+
+:::caution
+
+If the default value is a function, **it cannot return a Promise**, it must just return the value directly.
+
+:::
 
 <!-- ################################ -->
 <!-- ################################ -->
@@ -315,40 +235,6 @@ The values are affected by the `timeZone` config at the connection.
 
 :::
 
-#### `name`
-
-The name of the column in the database.
-
-```ts
-class ExampleEntity {
-  @SaveDateColumn({
-    name: "custom_name",
-  })
-  createdAt: Date;
-}
-```
-
-:::caution
-
-This name **isn't affected** by the `namingStrategy` of the connection.
-
-:::
-
-#### `extras`
-
-Extra data that may be required by plugins.
-
-```ts
-class ExampleEntity {
-  @SaveDateColumn({
-    extras: {
-      foo: "bar",
-    },
-  })
-  createdAt: Date;
-}
-```
-
 <!-- ################################ -->
 <!-- ################################ -->
 <!-- ################################ -->
@@ -370,40 +256,6 @@ This decorator accepts columns with [simple types](#simple-types), and will gene
 The values are affected by the `timeZone` config at the connection.
 
 :::
-
-#### `name`
-
-The name of the column in the database.
-
-```ts
-class ExampleEntity {
-  @UpdateDateColumn({
-    name: "custom_name",
-  })
-  updatedAt: Date;
-}
-```
-
-:::caution
-
-This name **isn't affected** by the `namingStrategy` of the connection.
-
-:::
-
-#### `extras`
-
-Extra data that may be required by plugins.
-
-```ts
-class ExampleEntity {
-  @UpdateDateColumn({
-    extras: {
-      foo: "bar",
-    },
-  })
-  updatedAt: Date;
-}
-```
 
 <!-- ################################ -->
 <!-- ################################ -->
@@ -427,45 +279,45 @@ The values are affected by the `timeZone` config at the connection.
 
 :::
 
+<!-- ################################ -->
+<!-- ################################ -->
+<!-- ################################ -->
+
+## Special Decorators
+
+## References
+
+### Default Column Options
+
 #### `name`
-
-The name of the column in the database.
-
-```ts
-class ExampleEntity {
-  @DeleteDateColumn({
-    name: "custom_name",
-  })
-  deletedAt: Date;
-}
-```
 
 :::caution
 
-This name **isn't affected** by the `namingStrategy` of the connection.
+This name **isn't affected** by the `namingStrategy`, `prefix` or `suffix` of the connection
 
 :::
+
+The name of the entity in the database.
+
+**Type:** `string`
+
+#### `comment`
+
+A comment for the column. This may be just decorative, or in some databases, truly add a comment on the column.
+
+**Type:** `string`
+
+#### `databaseType`
+
+Most used for SQL databases, to specify exactly what type that column should have.
+
+**Type:** `string`
 
 #### `extras`
 
 Extra data that may be required by plugins.
 
-```ts
-class ExampleEntity {
-  @DeleteDateColumn({
-    extras: {
-      foo: "bar",
-    },
-  })
-  deletedAt: Date;
-}
-```
-
-<!-- ################################ -->
-<!-- ################################ -->
-<!-- ################################ -->
-
-## References
+**Type:** `object`
 
 ### Simple Types
 
@@ -483,4 +335,8 @@ Semi-Complex types are `Array` and **custom classes**.
 
 ### Complex Types
 
-Complex types are an **`Array` of custom classes**.
+Complex types are an **`Array` OF custom classes**.
+
+```
+
+```

@@ -6,9 +6,11 @@ sidebar_position: 5
 
 Find operators are used standardize how complex queries are made, so developers only have to learn how to do an specific thing one time.
 
+The support of it's operators depends **of the plugins**, so you **must** see their docs to confirm **if** you can use this operators, and **how exactly** they work. Some of then will only accept certain types of values, ou values that are referring to something specific, like indexes in an array.
+
 ## Between
 
-`Between` operator is used to find things between two values, it can includes dates, numbers and even strings, depending on the database.
+`Between` operator is used to find things between two values, it can includes dates, numbers and even strings, depending on the plugin and the database.
 
 :::info
 
@@ -25,13 +27,11 @@ import { Between } from "@techmmunity/symbiosis";
 
 import { exampleRepository } from "./example.repository";
 
-// ...
-
-exampleRepository.find({
-  age: Between(1, 10),
+const products = await exampleRepository.find({
+  price: Between(1, 25),
 });
 
-// ...
+// products = [{ id: 1, price: 2 }, { id: 2, price: 20 }]
 ```
 
 ## EndsWith
@@ -45,15 +45,11 @@ import { EndsWith } from "@techmmunity/symbiosis";
 
 import { exampleRepository } from "./example.repository";
 
-// ...
-
 const people = await exampleRepository.find({
   fullName: EndsWith("Wayne"),
 });
 
 // people = ["Bruce Wayne", "Martha Wayne", "Thomas Wayne"]
-
-// ...
 ```
 
 ## Exist
@@ -79,18 +75,16 @@ import { Exist } from "@techmmunity/symbiosis";
 
 import { exampleRepository } from "./example.repository";
 
-// ...
-
-exampleRepository.find({
-  age: Exist(),
+const tasks = exampleRepository.find({
+  deletedAt: Exist(),
 });
 
-// ...
+// tasks = [{ name: "Foo", deletedAt: "01/01/2020" }, { name: "Bar", deletedAt: true }]
 ```
 
 ## In
 
-`In` operator allow you to specify a find to multiple values to a single column.
+`In` operator allow you to query multiple values to the same column.
 
 :::tip
 
@@ -107,13 +101,29 @@ import { In } from "@techmmunity/symbiosis";
 
 import { exampleRepository } from "./example.repository";
 
-// ...
-
-exampleRepository.find({
+const people = await exampleRepository.find({
   age: In([18, 21, 48]),
 });
 
-// ...
+// people = [{ name: "Marcus", age: 48 }]
+```
+
+## Includes
+
+`Includes` operator allow you to query values inside a list.
+
+Example:
+
+```ts
+import { Includes } from "@techmmunity/symbiosis";
+
+import { exampleRepository } from "./example.repository";
+
+const staff = await exampleRepository.find({
+  roles: Includes(["admin", "mod"]),
+});
+
+// staff = [{ name: "Marcus", roles: ["default", "admin"] }]
 ```
 
 ## IsNull
@@ -127,13 +137,11 @@ import { IsNull } from "@techmmunity/symbiosis";
 
 import { exampleRepository } from "./example.repository";
 
-// ...
-
-exampleRepository.find({
-  age: IsNull(),
+const tasks = await exampleRepository.find({
+  deletedAt: IsNull(),
 });
 
-// ...
+// tasks = [{ name: "Foo", deletedAt: null }, { name: "Bar", deletedAt: null }]
 ```
 
 ## LessThan
@@ -153,13 +161,11 @@ import { LessThan } from "@techmmunity/symbiosis";
 
 import { exampleRepository } from "./example.repository";
 
-// ...
-
-exampleRepository.find({
+const people = await exampleRepository.find({
   age: LessThan(35),
 });
 
-// ...
+// people = [{ name: "Marcus", age: 20 }]
 ```
 
 ## LessThanOrEqual
@@ -179,13 +185,11 @@ import { LessThanOrEqual } from "@techmmunity/symbiosis";
 
 import { exampleRepository } from "./example.repository";
 
-// ...
-
-exampleRepository.find({
+const people = await exampleRepository.find({
   age: LessThanOrEqual(35),
 });
 
-// ...
+// people = [{ name: "Marcus", age: 35 }]
 ```
 
 ## Like
@@ -205,13 +209,11 @@ import { Like } from "@techmmunity/symbiosis";
 
 import { exampleRepository } from "./example.repository";
 
-// ...
-
-exampleRepository.find({
+const people = await exampleRepository.find({
   fullName: Like("John"),
 });
 
-// ...
+// people = [{ fullName: "Paul John Marcus" }, { fullName: "John Hancock" }]
 ```
 
 ## MoreThan
@@ -231,13 +233,11 @@ import { MoreThan } from "@techmmunity/symbiosis";
 
 import { exampleRepository } from "./example.repository";
 
-// ...
-
-exampleRepository.find({
+const people = await exampleRepository.find({
   age: MoreThan(35),
 });
 
-// ...
+// people = [{ name: "Marcus", age: 40 }]
 ```
 
 ## MoreThanOrEqual
@@ -257,13 +257,11 @@ import { MoreThanOrEqual } from "@techmmunity/symbiosis";
 
 import { exampleRepository } from "./example.repository";
 
-// ...
-
-exampleRepository.find({
+const people = await exampleRepository.find({
   age: MoreThanOrEqual(35),
 });
 
-// ...
+// people = [{ name: "Marcus", age: 35 }]
 ```
 
 ## Not
@@ -277,13 +275,11 @@ import { Not } from "@techmmunity/symbiosis";
 
 import { exampleRepository } from "./example.repository";
 
-// ...
-
-exampleRepository.find({
+const people = await exampleRepository.find({
   age: Not(35),
 });
 
-// ...
+// people = [{ name: "Marcus", age: 40 }, { name: "Kate", age: 26 }]
 ```
 
 Example combine with other operator:
@@ -293,13 +289,11 @@ import { Not, In } from "@techmmunity/symbiosis";
 
 import { exampleRepository } from "./example.repository";
 
-// ...
-
-exampleRepository.find({
+const people = await exampleRepository.find({
   age: Not(In([35, 48, 52])),
 });
 
-// ...
+// people = [{ name: "Marcus", age: 40 }, { name: "Kate", age: 26 }]
 ```
 
 ## StartsWith

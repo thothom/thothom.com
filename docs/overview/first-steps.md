@@ -9,13 +9,13 @@ sidebar_position: 1
 With Yarn:
 
 ```
-yarn add @techmmunity/symbiosis
+yarn add @techmmunity/symbiosis reflect-metadata
 ```
 
 With NPM:
 
 ```
-npm i --save @techmmunity/symbiosis
+npm i --save @techmmunity/symbiosis reflect-metadata
 ```
 
 :::danger
@@ -26,11 +26,13 @@ The installation is not over yet, you still need a plugin!
 
 ## Plugins
 
-As mentioned in the introduction, Techmmunity Symbiosis works with plugins. You can find a complete list of official and recommended plugins [right here](../plugins/plugins-list).
+As mentioned in the introduction, Techmmunity Symbiosis works with plugins. You can find a complete list of official and recommended plugins [right here](../plugins/plugins-list), or a list of all plugins [right here](https://www.npmjs.com/search?q=keywords:techmmunity-symbiosis).
 
 ## Use
 
-### Create your Entity
+### Create your Entity And Repository Type
+
+The `Repository` is imported **from the plugin**, so replace the `example-symbiosis-plugin` of this example, with the plugin that you choose to use.
 
 ```ts
 // example.entity.ts
@@ -41,6 +43,7 @@ import {
   Column,
   SaveDateColumn,
 } from "@techmmunity/symbiosis";
+import type { Repository } from "example-symbiosis-plugin";
 
 @Entity()
 export class ExampleEntity {
@@ -53,24 +56,37 @@ export class ExampleEntity {
   @SaveDateColumn()
   createdAt: Date;
 }
+
+export type ExampleRepository = Repository<ExampleEntity>;
 ```
 
 ### Creating your Connection
 
-The connections are imported **from the plugins**, so replace the `example-symbiosis-plugin` of this example, with the plugin that you choose to use.
+The `Connection` is imported **from the plugin**, so replace the `example-symbiosis-plugin` of this example, with the plugin that you choose to use.
 
-When creating a connection, you must import all the entities and put it into and array of the connection options, like in this example:
+When creating a connection, you must import **all and only the main entities**, the sub-entities are automatically loaded, and put it into and array of the connection options, like in this example:
 
 ```ts
 // database.connection.ts
 
-import { ExampleConnection } from "example-symbiosis-plugin";
+!!! THIS IS AN EXAMPLE OF THE SYNTAX AND WILL NOT WORK !!!
+
+import { Connection } from "example-symbiosis-plugin";
 import { ExampleEntity } from "./example.entity";
 
-export const connection = new ExampleConnection({
+const connection = new Connection({
+  // ... Put the extra connection options here
   entities: [ExampleEntity], // All your entities should be here
-  // Put the extra connection options here
+  databaseConfig: {
+    // The config to connect to the database
+  },
 });
+
+// You always must call the connect method!
+await connection.connect();
+
+
+export { connection };
 ```
 
 ### Creating your Repository
@@ -83,7 +99,7 @@ The repositories are made from a combination of `connection` + `entity`, like th
 import { ExampleEntity } from "./example.entity";
 import { connection } from "./database.connection";
 
-export const ExampleRepository = connection.getRepository(ExampleEntity);
+export const exampleRepository = connection.getRepository(ExampleEntity);
 ```
 
 ### Using your Repository
@@ -91,13 +107,13 @@ export const ExampleRepository = connection.getRepository(ExampleEntity);
 ```ts
 // using.repository.ts
 
-import { ExampleRepository } from "./example.repository";
+import { exampleRepository } from "./example.repository";
 
 // More logic here
 
-ExampleRepository.save(data);
-ExampleRepository.findOneByPrimaryKey(data);
-ExampleRepository.findManyByPrimaryKey(data);
+exampleRepository.save(data);
+exampleRepository.findOneByPrimaryKey(data);
+exampleRepository.findManyByPrimaryKey(data);
 // And a lot more
 ```
 
@@ -105,7 +121,7 @@ You can see a full list of the repository methods [right here](./repositories).
 
 ## Done!
 
-This is the basics of Techmmunity Symbiosis! Now you are ready to start to explore and make your crazy CRUDs!
+This is the basics of Techmmunity Symbiosis! Now you are ready to start to explore and make your own crazy CRUDs!
 
 :::tip After This
 
