@@ -14,9 +14,9 @@ module.exports = {
   projectName: "symbiosis", // Usually your repo name.
   themeConfig: {
     navbar: {
-      title: "Symbiosis OM",
+      title: "Symbiosis",
       logo: {
-        alt: "Symbiosis OM",
+        alt: "Symbiosis",
         src: "img/logo.svg",
       },
       items: [

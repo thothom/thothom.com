@@ -6,6 +6,6 @@ sidebar_position: 2
 
 :::info COMING SOON
 
-Our team will start working on it after the [DynamoDb plugin](./dynamodb/) is finished.
+Our team will start working on it after the [DynamoDb plugin](./dynamodb) is finished.
 
 :::

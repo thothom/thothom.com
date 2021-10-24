@@ -37,7 +37,7 @@ Configure `tsconfig.json`:
 
 ## Plugins
 
-As mentioned in the introduction, Techmmunity Symbiosis works with plugins. You can find a complete list of official and recommended plugins [right here](../overview/plugins), or a list of all plugins [right here](https://www.npmjs.com/search?q=keywords:techmmunity-symbiosis).
+As mentioned in the introduction, _Symb_ works with plugins. You can find a complete list of official and recommended plugins [right here](../overview/plugins), or a list of all plugins [right here](https://www.npmjs.com/search?q=keywords:techmmunity-symbiosis).
 
 ## Usage
 
@@ -132,10 +132,10 @@ You can see a full list of the repository methods [right here](./repositories).
 
 ## Done!
 
-This is the basics of Techmmunity Symbiosis! Now you are ready to start to explore and make your own crazy CRUDs!
+This is the basics of _Symb_! Now you are ready to start to explore and make your own crazy CRUDs!
 
 :::tip After This
 
-We **strongly** recommend that you keep reading the docs. Techmmunity Symbiosis has a lot of cool features that can save you a ton of time!
+We **strongly** recommend that you keep reading the docs. _Symb_ has a lot of cool features that can save you a ton of time!
 
 :::

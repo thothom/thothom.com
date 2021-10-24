@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # NestJs
 
-Techmmunity Symbiosis has a integration with NestJs, so you can work with the framework without worry about the integration with the database.
+_Symb_ has a integration with NestJs, so you can work with the framework without worry about the integration with the database.
 
 ## Installation
 
@@ -22,7 +22,7 @@ npm i @techmmunity/symbiosis-nestjs
 
 ## Usage (example with DynamoDB)
 
-Regardless the integration syntax, it works exactly as the normal Symbiosis, so you can use the repositories as always, and the parameters will receive the same values as always.
+Regardless the integration syntax, it works exactly as the normal _Symb_, so you can use the repositories as always, and the parameters will receive the same values as always.
 
 ```ts
 // app.module.ts
@@ -104,7 +104,7 @@ export class UserService {
 
 ## `SymbiosisModule`
 
-The `SymbiosisModule` is the main connection between NestJs and Techmmunity Symbiosis. It has 2 methods that allow you to integrate the symbiosis in the most performative way possible.
+The `SymbiosisModule` is the main connection between NestJs and _Symb_. It has 2 methods that allow you to integrate the symbiosis in the most performative way possible.
 
 ### `.forRoot()`
 

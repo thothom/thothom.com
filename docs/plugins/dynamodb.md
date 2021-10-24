@@ -28,7 +28,7 @@ It's use is exactly like described in [the first steps](../overview/first-steps)
 
 ## Examples
 
-- [Basic example with Fastify](https://github.com/techmmunity-education/symbiosis-dynamodb-fastify)
+- [Basic example](https://github.com/techmmunity-education/symbiosis-dynamodb-example)
 
 ## Advices and alerts
 

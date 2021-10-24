@@ -1,5 +1,5 @@
 ---
-sidebar_position: 3
+sidebar_position: 4
 ---
 
 # Connections
@@ -10,7 +10,7 @@ Connections are the classes used to create the **database connection**, and hand
 
 :::caution
 
-Techmmunity Symbiosis doesn't have a connection class to be imported by the user!
+_Symb_ doesn't have a connection class to be imported by the user!
 
 The `Connection` will **ALWAYS** be exported by the plugin!
 
@@ -24,7 +24,7 @@ All the plugins will always follow the naming pattern of **Connection**.
 
 ## Options
 
-Techmmunity Symbiosis provides some basic config for the connections, that are present and can be used by any plugin.
+_Symb_ provides some basic config for the connections, that are present and can be used by any plugin.
 
 Example where to use it:
 
@@ -120,7 +120,7 @@ export const connection = new Connection({
 
 ### `namingStrategy`
 
-This is were Techmmunity Symbiosis starts to bright! This config will format every name of your entities, columns and in the future, indexes and more!
+This is were _Symb_ starts to bright! This config will format every name of your entities, columns and in the future, indexes and more!
 
 **Accepted values**
 

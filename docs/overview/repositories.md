@@ -1,5 +1,5 @@
 ---
-sidebar_position: 5
+sidebar_position: 6
 ---
 
 # Repositories
@@ -65,7 +65,7 @@ Inserts a new record to the table. If a record with the same primary keys alread
 
 This may will do to 2 queries internally instead of 1.
 
-**Obs:** This is a limitation from the databases, not from Symbiosis, ok? :wink:
+**Obs:** This is a limitation from the databases, not from _Symb_, ok? :wink:
 
 :::
 
@@ -96,7 +96,7 @@ Updates one or many records of the table based on a query condition.
 
 Always try to make queries by primary keys, otherwise the queries will be **very unperformative**.
 
-**Obs:** This is a limitation from the databases, not from Symbiosis, ok? :wink:
+**Obs:** This is a limitation from the databases, not from _Symb_, ok? :wink:
 
 :::
 
@@ -158,7 +158,7 @@ Find multiple records by a query condition.
 
 Always try to make queries by primary keys, otherwise the queries will be **extremely unperformative**.
 
-**Obs:** This is a limitation from the databases, not from Symbiosis, ok? :wink:
+**Obs:** This is a limitation from the databases, not from _Symb_, ok? :wink:
 
 :::
 
@@ -187,7 +187,7 @@ Find one record by a query condition.
 
 Always try to make queries by primary keys, otherwise the queries will be **extremely unperformative**.
 
-**Obs:** This is a limitation from the databases, not from Symbiosis, ok? :wink:
+**Obs:** This is a limitation from the databases, not from _Symb_, ok? :wink:
 
 :::
 
@@ -227,7 +227,7 @@ Delete one or many records by a query condition.
 
 Always try to make queries by primary keys, otherwise the queries will be **extremely unperformative**.
 
-**Obs:** This is a limitation from the databases, not from Symbiosis, ok? :wink:
+**Obs:** This is a limitation from the databases, not from _Symb_, ok? :wink:
 
 :::
 
@@ -261,7 +261,7 @@ To use this method, the entity must have a column decorated with [`@DeleteDateCo
 
 Always try to make queries by primary keys, otherwise the queries will be **extremely unperformative**.
 
-**Obs:** This is a limitation from the databases, not from Symbiosis, ok? :wink:
+**Obs:** This is a limitation from the databases, not from _Symb_, ok? :wink:
 
 :::
 
@@ -295,7 +295,7 @@ To use this method, the entity must have a column decorated with [`@DeleteDateCo
 
 Always try to make queries by primary keys, otherwise the queries will be **very unperformative**.
 
-**Obs:** This is a limitation from the databases, not from Symbiosis, ok? :wink:
+**Obs:** This is a limitation from the databases, not from _Symb_, ok? :wink:
 
 :::
 
@@ -333,7 +333,7 @@ Count the records returned by a query condition.
 
 Always try to make queries by primary keys, otherwise the queries will be **extremely unperformative**.
 
-**Obs:** This is a limitation from the databases, not from Symbiosis, ok? :wink:
+**Obs:** This is a limitation from the databases, not from _Symb_, ok? :wink:
 
 :::
 

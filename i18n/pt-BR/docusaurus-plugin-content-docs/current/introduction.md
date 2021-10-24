@@ -4,7 +4,7 @@ sidebar_position: 0
 
 # Introdução
 
-Symbiosis (Techmmunity Symbiosis) é uma _Object Mapper_([ORM + ODM](https://medium.com/spidernitt/orm-and-odm-a-brief-introduction-369046ec57eb)) feita em TypeScript e inspirada na [sintaxe do TypeORM](https://github.com/typeorm/typeorm) e [abordagem plugavel do ESLint](https://eslint.org/).
+Techmmunity Symbiosis (ou apenas _Symb_ para os chegados), é uma _Object Mapper_([ORM + ODM](https://medium.com/spidernitt/orm-and-odm-a-brief-introduction-369046ec57eb)) feita em TypeScript e inspirada na [sintaxe do TypeORM](https://github.com/typeorm/typeorm) e [abordagem plugavel do ESLint](https://eslint.org/).
 
 Nossa intenção aqui é padronizar a conexão e o uso de **todos os bancos de dados** com a melhor performance possível, e para isso, nós utilizamos uma abordagem plugavel, com isso mais pessoas podem contribuir e criar suas próprias integrações com diferentes tipos de bancos de dados. O foco desse pacote para o usuário final, é apenas fazer a tipagem, enquanto os plugin fazem o "trabalho sujo" por debaixo dos panos.
 

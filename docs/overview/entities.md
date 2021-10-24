@@ -1,5 +1,5 @@
 ---
-sidebar_position: 4
+sidebar_position: 5
 ---
 
 # Entities
@@ -102,15 +102,21 @@ class ExampleEntity {}
 
 ### `@PrimaryGeneratedColumn`
 
-Use this decorator at your primary columns, that you want to be generated **by Techmmunity Symbiosis**. If you want to manually generate the value of the column, or the database will do this for you, use the [`@PrimaryColumn`](#primarycolumn) decorator.
+Use this decorator at your primary columns, that you want to be generated **by _Symb_**. If you want to manually generate the value of the column, or the database will do this for you, use the [`@PrimaryColumn`](#primarycolumn) decorator.
 
 **When to use?**
 
-- You want that Symbiosis automatically generate the value of this column
+- You want that _Symb_ automatically generate the value of this column
 
 :::caution
 
 Primary columns only accept `string` and `number` as type! Types like arrays, objects, boolean and classes will throw an error!
+
+:::
+
+:::caution
+
+To auto-generate columns with "uuid" strategy, you must install the `uuid` package!
 
 :::
 
@@ -197,7 +203,7 @@ A enum to get the values of. **It's a required field** if you use a enum as type
 
 :::caution
 
-Symbiosis **NOT** validate if the values passed on the repository methods are the same as the enum!
+_Symb_ **NOT** validate if the values passed on the repository methods are the same as the enum!
 
 :::
 
