@@ -28,7 +28,7 @@ Our goal here is to be the bridge from user to plugin-developer, making easy to 
 - Easy to code plugins
 - Well documented
 - Focus on microservices and serverless applications
-- Extremely specific features are not supported, but a large enough number of features that will work for 90% of the projects.
+- Extremely specific features are not supported, but a large enough number of features that will do the job for 90% of the projects.
 
 ## We need your help!
 
