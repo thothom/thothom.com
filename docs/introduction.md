@@ -4,7 +4,7 @@ sidebar_position: 0
 
 # Introduction
 
-Techmmunity Symbiosis _(or Symb, for the close friends)_ is an **Object Mapper**, is an _Object Mapper_ ([ORM + ODM](https://medium.com/spidernitt/orm-and-odm-a-brief-introduction-369046ec57eb)) built in TypeScript and inspired on [TypeORM syntax](https://github.com/typeorm/typeorm) and [ESLint plugable approach](https://eslint.org/).
+Techmmunity Symbiosis _(or Symb, for the close friends)_ is an **Object Mapper** ([ORM + ODM](https://medium.com/spidernitt/orm-and-odm-a-brief-introduction-369046ec57eb)), built in TypeScript and inspired on [TypeORM syntax](https://github.com/typeorm/typeorm) and [ESLint plugable approach](https://eslint.org/).
 
 Our intention here is standardize the connection and implementation of **every database** with the best performance possible, and for this, we use an plugable approach, so more people can contribute and create their own integration. This package alone can't do much, the plugins do the work of connect and handle the database.
 
