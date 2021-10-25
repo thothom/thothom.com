@@ -54,7 +54,7 @@ module.exports = {
           items: [
             {
               label: "Discord",
-              href: "https://discord.gg/5hPnJzzAe2",
+              href: "https://discord.gg/TakYksUzzZ",
             },
           ],
         },

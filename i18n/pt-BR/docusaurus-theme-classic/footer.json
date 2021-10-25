@@ -15,17 +15,9 @@
     "message": "Tutorial",
     "description": "The label of footer link with label=Tutorial linking to /docs/introduction"
   },
-  "link.item.label.Stack Overflow": {
-    "message": "Stack Overflow",
-    "description": "The label of footer link with label=Stack Overflow linking to https://stackoverflow.com/questions/tagged/techmmunity-symbiosis"
-  },
   "link.item.label.Discord": {
     "message": "Discord",
-    "description": "The label of footer link with label=Discord linking to https://discord.gg/5hPnJzzAe2"
-  },
-  "link.item.label.Blog": {
-    "message": "Blog",
-    "description": "The label of footer link with label=Blog linking to /blog"
+    "description": "The label of footer link with label=Discord linking to https://discord.gg/TakYksUzzZ"
   },
   "link.item.label.GitHub": {
     "message": "GitHub",

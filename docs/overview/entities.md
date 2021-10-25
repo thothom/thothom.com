@@ -20,6 +20,12 @@ They are made with `decorators`, and here is a list of all of they:
 
 ### `@Entity`
 
+:::danger
+
+Do **NOT** use directly objects as columns types, you must create a [sub-entity](#subentities)
+
+:::
+
 The `@Entity` decorator is used to define a **table** or a sub-entity of your database.
 
 Example of a table:
@@ -88,6 +94,56 @@ Extra data that may be required by plugins.
   },
 })
 class ExampleEntity {}
+```
+
+### "SubEntities"
+
+SubEntities are classes decorated with `@Entity({ isSubEntity: true })`. These classes are to assign `@Column` a type.
+
+:::info
+
+SubEntities **don't have** their own tables, they are nested elements inside a main record.
+
+:::
+
+Example:
+
+```ts
+/**
+ * To represent this object:
+ */
+{
+  id: 1,
+  subEntity: {
+    foo: "bar";
+  },
+  arrSubEntities: [
+    {
+      foo: "bar";
+    }
+  ]
+}
+
+/**
+ * Your entities will look like this:
+ */
+@Entity({ isSubEntity: true })
+class ExampleSubEntity {
+  @Column()
+  foo: string;
+}
+
+@Entity()
+export class ExampleEntity {
+  @PrimaryColumn()
+  id: string;
+
+  @Column(ExampleSubEntity)
+  subEntity: ExampleSubEntity;
+
+  @Column(ExampleSubEntity)
+  arrSubEntities: Array<ExampleSubEntity>;
+}
 ```
 
 <!-- ################################ -->

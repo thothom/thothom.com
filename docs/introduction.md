@@ -14,7 +14,7 @@ Currently it only works on Node with TypeScript (and transpiled JavaScript), and
 
 In recent years, a lot of new databases are being created and a lot more of data is being generated, stored and manipulated. To provide the more perfect product possible to their clients, the companies are changing or using multiples databases at the same time with a increasingly frequency.
 
-To handle all this databases, the developers must learn from the scratch how to use the provided sdk, how to make queries, how to setup the database, and a bunch of information non-related to the product or to the systems that they are building, forcing then to wast precious time and money.
+To handle all this databases, the developers must learn from the scratch how to use the provided SDK, how to make queries, how to setup the database, and a bunch of information non-related to the product or to the systems that they are building, forcing then to wast precious time and money.
 
 With these problems in mind, we come with the solution: A OM that can communicate with **ALL** databases, using the same syntax, the same methods, and the same configuration.
 
@@ -28,8 +28,8 @@ Our goal here is to be the bridge from user to plugin-developer, making easy to 
 - Easy to code plugins
 - Well documented
 - Focus on microservices and serverless applications
-- Not extremely specific feature support, but a large enough number of features that will do the job for 90% of the projects.
+- Extremely specific features are not supported, but a large enough number of features that will do the job for 90% of the projects.
 
 ## We need your help!
 
-We are needing translators for all languages! If you want to be a volunteer, please contact us on the [discord](https://discord.gg/5hPnJzzAe2) or create a [pull request](https://github.com/techmmunity/symbiosis.techmmunity.com)!
+We are needing translators for all languages! If you want to be a volunteer, please contact us on the [Discord](https://discord.gg/TakYksUzzZ) or create a [pull request](https://github.com/techmmunity/symbiosis.techmmunity.com)!
