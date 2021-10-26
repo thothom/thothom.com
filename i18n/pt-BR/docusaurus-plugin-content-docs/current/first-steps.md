@@ -100,9 +100,9 @@ await connection.connect();
 export { connection };
 ```
 
-### Criando seu repositório
+### Criando seu Repositório
 
-Os repositórios são feitos de uma combinação de `connection` + `entity`, tipo isto:
+Os Repositórios são feitos de uma combinação de `connection` + `entity`, tipo isto:
 
 ```ts
 // example.repository.ts
@@ -128,7 +128,7 @@ exampleRepository.findManyByPrimaryKey(data);
 // E mais um monte
 ```
 
-Você pode ver uma lista completa dos métodos de repositório [aqui](./repositories).
+Você pode ver uma lista completa dos métodos de Repositório [aqui](./repositories).
 
 ## Pronto!
 
