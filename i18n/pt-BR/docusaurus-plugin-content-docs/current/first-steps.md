@@ -110,7 +110,8 @@ Os Repositórios são feitos de uma combinação de `connection` + `entity`, des
 import { ExampleEntity } from "./example.entity";
 import { connection } from "./database.connection";
 
-export const exampleRepository = connection.getRepository(ExampleEntity);
+export const exampleRepository = connection.getRepository<ExampleEntity>(ExampleEntity);
+
 ```
 
 ### Usando seu Repositório
