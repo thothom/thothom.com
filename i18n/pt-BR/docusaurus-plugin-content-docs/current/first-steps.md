@@ -71,7 +71,7 @@ export class ExampleEntity {
 export type ExampleRepository = Repository<ExampleEntity>;
 ```
 
-### Criando a sua conexão
+### Criando a sua Conexão
 
 A `Connection` é importada **do plugin**, então substitua o `example-symbiosis-plugin` deste exemplo com o plugin que você escolheu usar.
 
