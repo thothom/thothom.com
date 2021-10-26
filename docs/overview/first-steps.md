@@ -110,7 +110,7 @@ The repositories are made from a combination of `connection` + `entity`, like th
 import { ExampleEntity } from "./example.entity";
 import { connection } from "./database.connection";
 
-export const exampleRepository = connection.getRepository(ExampleEntity);
+export const exampleRepository = connection.getRepository<ExampleEntity>(ExampleEntity);
 ```
 
 ### Using your Repository
