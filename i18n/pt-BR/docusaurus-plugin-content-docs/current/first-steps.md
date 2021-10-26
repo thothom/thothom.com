@@ -132,7 +132,7 @@ Você pode ver uma lista completa dos métodos de repositório [aqui](./reposito
 
 ## Pronto!
 
-Este é o básico _Symb_! Agora você está pronto pra começar a explorar e fazer suas CRUDs insanas!
+Este é o básico _Symb_! Agora você está pronto pra começar a explorar e fazer seus CRUDs malucos!
 
 :::tip Depois disso
 
