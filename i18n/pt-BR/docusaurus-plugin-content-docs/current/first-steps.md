@@ -18,13 +18,13 @@ Com NPM:
 npm i @techmmunity/symbiosis reflect-metadata
 ```
 
-:::atenção
+:::danger atenção
 
 A instalação não acabou, você ainda precisa de um plugin!
 
 :::
 
-Configure `tsconfig.json`:
+Configure o `tsconfig.json`:
 
 ```json
 {
@@ -37,11 +37,11 @@ Configure `tsconfig.json`:
 
 ## Plugins
 
-Como mencionado na introdução, _Symb_ funciona com plugins. Você pode entrar a lista completa dos plugins oficiais e recomendados [bem aqui](../overview/plugins), ou uma lista de todos os plugins [aqui](https://www.npmjs.com/search?q=keywords:techmmunity-symbiosis).
+Como mencionado na introdução, o _Symb_ funciona com plugins. Você pode encontrar a lista completa dos plugins oficiais e recomendados [bem aqui](../overview/plugins), ou uma lista de todos os plugins [aqui](https://www.npmjs.com/search?q=keywords:techmmunity-symbiosis).
 
 ## Uso
 
-### Criar sua Entidade e Tipo de Repositório
+### Crie sua Entidade e Tipo de Repositório
 
 O `Repository` é importado **do plugin**, então substitua `example-symbiosis-plugin` deste exemplo com o plugin que você escolheu usar.
 
@@ -134,8 +134,8 @@ Você pode ver uma lista completa dos métodos de repositório [aqui](./reposito
 
 Este é o básico _Symb_! Agora você está pronto pra começar a explorar e fazer suas CRUDs insanas!
 
-:::tip Depois disso:
+:::tip Depois disso
 
-Nós recomendamos **fortemente** que você continue lendo a documentação . _Symb_ tem muitas features legais que podem te poupar uma tonelada de tempo!
+Nós recomendamos **fortemente** que você continue lendo a documentação. O _Symb_ tem muitas funcionalidades legais que podem te poupar bastante de tempo!
 
 :::
