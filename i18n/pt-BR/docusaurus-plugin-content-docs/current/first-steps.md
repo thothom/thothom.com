@@ -1,0 +1,141 @@
+---
+sidebar_position: 1
+---
+
+# Primeiros passos
+
+## Instalação
+
+Com Yarn:
+
+```
+yarn add @techmmunity/symbiosis reflect-metadata
+```
+
+Com NPM:
+
+```
+npm i @techmmunity/symbiosis reflect-metadata
+```
+
+:::atenção
+
+A instalação não acabou, você ainda precisa de um plugin!
+
+:::
+
+Configure `tsconfig.json`:
+
+```json
+{
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
+  }
+}
+```
+
+## Plugins
+
+Como mencionado na introdução, _Symb_ funciona com plugins. Você pode entrar a lista completa dos plugins oficiais e recomendados [bem aqui](../overview/plugins), ou uma lista de todos os plugins [aqui](https://www.npmjs.com/search?q=keywords:techmmunity-symbiosis).
+
+## Uso
+
+### Criar sua Entidade e Tipo de Repositório
+
+O `Repository` é importado **do plugin**, então substitua `example-symbiosis-plugin` deste exemplo com o plugin que você escolheu usar.
+
+```ts
+// example.entity.ts
+
+import {
+  Entity,
+  PrimaryColumn,
+  Column,
+  SaveDateColumn,
+} from "@techmmunity/symbiosis";
+import type { Repository } from "example-symbiosis-plugin";
+
+@Entity()
+export class ExampleEntity {
+  @PrimaryColumn()
+  id: string;
+
+  @Column()
+  foo: number;
+
+  @SaveDateColumn()
+  createdAt: Date;
+}
+
+export type ExampleRepository = Repository<ExampleEntity>;
+```
+
+### Criando a sua conexão
+
+A `Connection` é importada **do plugin**, então substitua o `example-symbiosis-plugin` deste exemplo com o plugin que você escolheu usar.
+
+Quando estiver criando a conexão, você deve importar **todas e somente as entidades principais**, as sub-entitidades são carregadas automaticamente, e coloque dentro do array de opções de conexão, como neste exemplo:
+
+```ts
+// database.connection.ts
+
+!!! ESTE É UM EXEMPLO DA SINTAXE E NÃO VAI FUNCIONAR !!!
+
+import { Connection } from "example-symbiosis-plugin";
+import { ExampleEntity } from "./example.entity";
+
+const connection = new Connection({
+  // ... Coloque as opções extras de conexão aqui
+  entities: [ExampleEntity], // Todas as suas entidades devem estar aqui
+  databaseConfig: {
+    // A configuração para conectar ao banco de dados
+  },
+});
+
+// Você sempre deve chamar um método de conexão!
+await connection.connect();
+
+
+export { connection };
+```
+
+### Criando seu repositório
+
+Os repositórios são feitos de uma combinação de `connection` + `entity`, tipo isto:
+
+```ts
+// example.repository.ts
+
+import { ExampleEntity } from "./example.entity";
+import { connection } from "./database.connection";
+
+export const exampleRepository = connection.getRepository(ExampleEntity);
+```
+
+### Usando seus Repositório
+
+```ts
+// using.repository.ts
+
+import { exampleRepository } from "./example.repository";
+
+// Mais lógica aqui
+
+exampleRepository.save(data);
+exampleRepository.findOneByPrimaryKey(data);
+exampleRepository.findManyByPrimaryKey(data);
+// E mais um monte
+```
+
+Você pode ver uma lista completa dos métodos de repositório [aqui](./repositories).
+
+## Pronto!
+
+Este é o básico _Symb_! Agora você está pronto pra começar a explorar e fazer suas CRUDs insanas!
+
+:::tip Depois disso:
+
+Nós recomendamos **fortemente** que você continue lendo a documentação . _Symb_ tem muitas features legais que podem te poupar uma tonelada de tempo!
+
+:::
