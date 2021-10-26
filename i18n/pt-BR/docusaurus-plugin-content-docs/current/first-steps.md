@@ -93,7 +93,7 @@ const connection = new Connection({
   },
 });
 
-// Você sempre deve chamar um método de conexão!
+// Você sempre deve chamar um método connect!
 await connection.connect();
 
 
