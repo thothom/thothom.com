@@ -75,7 +75,7 @@ export type ExampleRepository = Repository<ExampleEntity>;
 
 A `Connection` é importada **do plugin**, então substitua o `example-symbiosis-plugin` deste exemplo com o plugin que você escolheu usar.
 
-Quando estiver criando a conexão, você deve importar **todas - e somente - as entidades principais**, as sub-entitidades são carregadas automaticamente, e colocá-las dentro do array de entidades das opções de conexão, como neste exemplo:
+Quando estiver criando a conexão, você deve importar **todas - e somente - as entidades principais**, as sub-entitidades são carregadas automaticamente, e então colocá-las dentro do array de entidades das opções da conexão, como neste exemplo:
 
 ```ts
 // database.connection.ts
