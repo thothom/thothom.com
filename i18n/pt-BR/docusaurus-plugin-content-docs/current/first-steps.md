@@ -102,7 +102,7 @@ export { connection };
 
 ### Criando seu Repositório
 
-Os Repositórios são feitos de uma combinação de `connection` + `entity`, tipo isto:
+Os Repositórios são feitos de uma combinação de `connection` + `entity`, deste jeito:
 
 ```ts
 // example.repository.ts
