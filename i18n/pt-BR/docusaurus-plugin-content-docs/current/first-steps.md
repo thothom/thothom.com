@@ -129,7 +129,7 @@ exampleRepository.findManyByPrimaryKey(data);
 // E mais um monte
 ```
 
-Você pode ver uma lista completa dos métodos de Repositório [aqui](./repositories).
+Você pode ver uma lista completa dos métodos de um Repositório [aqui](./repositories).
 
 ## Pronto!
 
