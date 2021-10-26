@@ -113,7 +113,7 @@ import { connection } from "./database.connection";
 export const exampleRepository = connection.getRepository(ExampleEntity);
 ```
 
-### Usando seus Repositório
+### Usando seu Repositório
 
 ```ts
 // using.repository.ts
