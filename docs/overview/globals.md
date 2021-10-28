@@ -17,25 +17,27 @@ The method used to define a global connection instance. You can define one or ma
 ```ts
 // database.connection.ts
 
-!!! THIS IS AN EXAMPLE OF THE SYNTAX AND WILL NOT WORK !!!
-
 import { setGlobalConnection } from "@techmmunity/symbiosis";
 import { Connection } from "example-symbiosis-plugin";
 
 import { ExampleEntity } from "./example.entity";
 
-const connection = new Connection({
-  // ... Put the extra connection options here
-  entities: [ExampleEntity], // All your entities should be here
-  databaseConfig: {
-    // The config to connect to the database
-  },
-});
+const bootstrap = async () => {
+  const connection = await new Connection({
+    // ... Put the extra connection options here
+    entities: [ExampleEntity], // All your entities should be here
+    databaseConfig: {
+      // The config to connect to the database
+    },
+  }).load();
 
-// You always must call the connect method!
-await connection.connect();
+  // You always must call the `connect` method!
+  await connection.connect();
 
-setGlobalConnection(connection);
+  setGlobalConnection(connection);
+};
+
+bootstrap();
 ```
 
 ### `getGlobalConnection`
@@ -53,7 +55,11 @@ import { getGlobalConnection } from "@techmmunity/symbiosis";
 
 setGlobalConnection(connection);
 
-getGlobalConnection(); // Will get the default connection
+// Will get the default connection
+getGlobalConnection();
+
+// Will get the specific connection
+getGlobalConnection("ConnectionName");
 ```
 
 ### `getGlobalRepository`
@@ -69,7 +75,9 @@ import { getGlobalRepository } from "@techmmunity/symbiosis";
 
 // ... Same example above
 
-getGlobalRepository(ExampleEntity); // Will get a repository from the default connection
+// Will get a repository from the default connection
+getGlobalRepository<ExampleEntity>(ExampleEntity);
 
-getGlobalRepository(ExampleEntity, "ConnectionName");
+// Will get a repository from the specific connection
+getGlobalRepository<ExampleEntity>(ExampleEntity, "ConnectionName");
 ```

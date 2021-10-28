@@ -75,29 +75,39 @@ export type ExampleRepository = Repository<ExampleEntity>;
 
 The `Connection` is imported **from the plugin**, so replace the `example-symbiosis-plugin` of this example, with the plugin that you choose to use.
 
-When creating a connection, you must import **all and only the main entities**, the sub-entities are automatically loaded, and put it into and array of the connection options, like in this example:
+When creating a connection, you have two choices:
+
+- You can import **all and only the main entities** (sub-entities are automatically loaded), and put it into and array of the connection options, like in this example:
+- Or, you can import use an array of paths to the entities, like in this example:
 
 ```ts
 // database.connection.ts
 
-!!! THIS IS AN EXAMPLE OF THE SYNTAX AND WILL NOT WORK !!!
-
+import { setGlobalConnection } from "@techmmunity/symbiosis";
 import { Connection } from "example-symbiosis-plugin";
+
 import { ExampleEntity } from "./example.entity";
 
-const connection = new Connection({
-  // ... Put the extra connection options here
-  entities: [ExampleEntity], // All your entities should be here
-  databaseConfig: {
-    // The config to connect to the database
-  },
-});
+const bootstrap = async () => {
+  const connection = new Connection({
+    // ... Put the extra connection options here
+    entities: [ExampleEntity], // All your entities should be here (OPTIONAL)
+    entitiesDir: ["entities/**/dir/*.entity.ts"], // (OPTIONAL)
+    databaseConfig: {
+      // The config to connect to the database
+    },
+  });
 
-// You always must call the connect method!
-await connection.connect();
+  // You always must call the `load` method!
+  await connection.load();
+  // You always must call the `connect` method!
+  await connection.connect();
 
+  // OPTIONAL, you can use connection directly by dependency injection
+  setGlobalConnection(connection);
+};
 
-export { connection };
+bootstrap();
 ```
 
 ### Creating your Repository
@@ -107,10 +117,12 @@ The repositories are made from a combination of `connection` + `entity`, like th
 ```ts
 // example.repository.ts
 
-import { ExampleEntity } from "./example.entity";
-import { connection } from "./database.connection";
+import { getGlobalRepository } from "@techmmunity/symbiosis";
 
-export const exampleRepository = connection.getRepository<ExampleEntity>(ExampleEntity);
+import { ExampleEntity } from "./example.entity";
+
+export const getExampleRepository = () =>
+  getGlobalRepository<ExampleEntity>(ExampleEntity);
 ```
 
 ### Using your Repository
@@ -118,14 +130,16 @@ export const exampleRepository = connection.getRepository<ExampleEntity>(Example
 ```ts
 // using.repository.ts
 
-import { exampleRepository } from "./example.repository";
+import { getExampleRepository } from "./example.repository";
 
 // More logic here
 
+const exampleRepository = getExampleRepository();
+
 exampleRepository.save(data);
-exampleRepository.findOneByPrimaryKey(data);
-exampleRepository.findManyByPrimaryKey(data);
-// And a lot more
+exampleRepository.findOne(data);
+exampleRepository.find(data);
+// ...
 ```
 
 You can see a full list of the repository methods [right here](./repositories).
