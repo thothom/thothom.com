@@ -24,4 +24,4 @@ Nossa meta aqui é ser a ponte entre os usuários e os desenvolvedores de plugin
 
 ## Nós precisamos da sua ajuda!
 
-Nós estamos precisando de tradutores para todos os idiomas! Se você quer ser um voluntário, por favor entre em contato conosco pelo [discord](https://discord.gg/5hPnJzzAe2)!
+Nós estamos precisando de tradutores para todos os idiomas! Se você quer ser um voluntário, por favor entre em contato conosco pelo [discord](https://discord.gg/TakYksUzzZ)!

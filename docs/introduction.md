@@ -32,4 +32,4 @@ Our goal here is to be the bridge from user to plugin-developer, making easy to 
 
 ## We need your help!
 
-We are needing translators for all languages! If you want to be a volunteer, please contact us on the [Discord](https://discord.gg/5hPnJzzAe2) or create a [pull request](https://github.com/techmmunity/symbiosis.techmmunity.com)!
+We are needing translators for all languages! If you want to be a volunteer, please contact us on the [Discord](https://discord.gg/TakYksUzzZ) or create a [pull request](https://github.com/techmmunity/symbiosis.techmmunity.com)!
