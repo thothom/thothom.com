@@ -33,12 +33,22 @@ Example where to use it:
 
 import { Connection } from "example-symbiosis-plugin";
 
-export const connection = new Connection({
-  // <- HERE this are the connection options
-});
+export const connect = async () => {
+  const connection = await new Connection({
+    // <- HERE this are the connection options
+  }).load();
+
+  await connection.connect();
+};
 ```
 
-### `name`
+:::info
+
+The options are **optional**. You can (and we recommend) that you use an `symbiosis.config.js` file.
+
+:::
+
+### `name` (optional)
 
 This is the connection name. It mostly used for logs and will not interfere in the OM functioning, **it's only cosmetic**, and because of it, you can have multiple connections with the same name, but we recommend to name each connection differently.
 
@@ -47,29 +57,54 @@ This is the connection name. It mostly used for logs and will not interfere in t
 
 import { Connection } from "example-symbiosis-plugin";
 
-export const connection = new Connection({
-  name: "Default",
-});
+export const connect = async () => {
+  const connection = await new Connection({
+    name: "Default",
+  }).load();
+
+  await connection.connect();
+};
 ```
 
-### `entities`
+### `entities` (optional)
 
 This field specifies your entities, and you must put **only your main entities here**. The sub-entities are recognized automatically, so you don't have to specify them here.
-
-We are currently working to accept paths to the entities, like TypeORM does, but right now it isn't available.
 
 ```ts
 // database.connection.ts
 
 import { Connection } from "example-symbiosis-plugin";
+
 import { ExampleEntity } from "./example.entity";
 
-export const connection = new Connection({
-  entities: [ExampleEntity], // All your entities should be here
-});
+export const connect = async () => {
+  const connection = await new Connection({
+    entities: [ExampleEntity], // All your entities should be here
+  }).load();
+
+  await connection.connect();
+};
 ```
 
-### `logging`
+### `entitiesDir` (optional)
+
+If you don't want to import all your entities, you can use this option to specify the entities paths, and they will be automatically loaded.
+
+```ts
+// database.connection.ts
+
+import { Connection } from "example-symbiosis-plugin";
+
+export const connect = async () => {
+  const connection = await new Connection({
+    entitiesDir: ["entities/**/dir/*.ts"], // All your entities paths should be here
+  }).load();
+
+  await connection.connect();
+};
+```
+
+### `logging` (optional)
 
 This options specifies the logging level of the connection.
 
@@ -96,14 +131,17 @@ This options specifies the logging level of the connection.
 // database.connection.ts
 
 import { Connection } from "example-symbiosis-plugin";
-import { ExampleEntity } from "./example.entity";
 
-export const connection = new Connection({
-  logging: "ALL",
-});
+export const connect = async () => {
+  const connection = await new Connection({
+    logging: "ALL",
+  }).load();
+
+  await connection.connect();
+};
 ```
 
-### `timeout`
+### `timeout` (optional)
 
 The time **in seconds** that a query has before it be considered a fail.
 
@@ -111,14 +149,17 @@ The time **in seconds** that a query has before it be considered a fail.
 // database.connection.ts
 
 import { Connection } from "example-symbiosis-plugin";
-import { ExampleEntity } from "./example.entity";
 
-export const connection = new Connection({
-  timeout: 10,
-});
+export const connect = async () => {
+  const connection = await new Connection({
+    timeout: 10,
+  }).load();
+
+  await connection.connect();
+};
 ```
 
-### `namingStrategy`
+### `namingStrategy` (optional)
 
 This is were _Symb_ starts to bright! This config will format every name of your entities, columns and in the future, indexes and more!
 
@@ -135,14 +176,17 @@ This is were _Symb_ starts to bright! This config will format every name of your
 // database.connection.ts
 
 import { Connection } from "example-symbiosis-plugin";
-import { ExampleEntity } from "./example.entity";
 
-export const connection = new Connection({
-  namingStrategy: {
-    entity: "snake_case",
-    column: "UPPER_CASE",
-  },
-});
+export const connect = async () => {
+  const connection = await new Connection({
+    namingStrategy: {
+      entity: "snake_case",
+      column: "UPPER_CASE",
+    },
+  }).load();
+
+  await connection.connect();
+};
 ```
 
 ```ts
@@ -166,7 +210,7 @@ TABLE: example_entity
 COLUMNS: ID, FOO_BAR
 ```
 
-### `prefix` and `suffix`
+### `prefix` and `suffix` (optional)
 
 Prefix / Suffix to be added / removed from entities, columns, etc, names.
 
@@ -184,26 +228,29 @@ The prefixes **are** affected by the _namingStrategy_ config! They are applied *
 // database.connection.ts
 
 import { Connection } from "example-symbiosis-plugin";
-import { ExampleEntity } from "./example.entity";
 
-export const connection = new Connection({
-  prefix: {
-    entity: {
-      add: "Foo",
+export const connect = async () => {
+  const connection = await new Connection({
+    prefix: {
+      entity: {
+        add: "Foo",
+      },
+      column: {
+        add: "Bar",
+      },
     },
-    column: {
-      add: "Bar",
+    suffix: {
+      entity: {
+        remove: "Entity",
+      },
+      column: {
+        remove: "Column",
+      },
     },
-  },
-  suffix: {
-    entity: {
-      remove: "Entity",
-    },
-    column: {
-      remove: "Column",
-    },
-  },
-});
+  }).load();
+
+  await connection.connect();
+};
 ```
 
 ```ts
@@ -227,7 +274,7 @@ TABLE: foo_example
 COLUMNS: ID, BAR_EXAMPLE
 ```
 
-### `timeZone`
+### `timeZone` (optional)
 
 Time Zone used to format the dates before be saved in the database, and for the auto-generated columns.
 
@@ -239,14 +286,17 @@ Time Zone used to format the dates before be saved in the database, and for the 
 // database.connection.ts
 
 import { Connection } from "example-symbiosis-plugin";
-import { ExampleEntity } from "./example.entity";
 
-export const connection = new Connection({
-  timeZone: "UTC",
-});
+export const connect = async () => {
+  const connection = await new Connection({
+    timeZone: "UTC",
+  }).load();
+
+  await connection.connect();
+};
 ```
 
-### `databaseConfig`
+### `databaseConfig` (required)
 
 Config used by the plugins to connect to the database.
 
@@ -254,11 +304,88 @@ Config used by the plugins to connect to the database.
 // database.connection.ts
 
 import { Connection } from "example-symbiosis-plugin";
+
+export const connect = async () => {
+  const connection = await new Connection({
+    databaseConfig: {
+      // ...Who knows?
+    },
+  }).load();
+
+  await connection.connect();
+};
+```
+
+## Methods
+
+The connection has some very important methods that you will use to develop your app.
+
+### `load`
+
+This method loads all your entities information, so the plugin can work properly.
+
+:::caution
+
+`load` is an **async** method!
+
+:::
+
+```ts
+// database.connection.ts
+
+import { Connection } from "example-symbiosis-plugin";
+
+export const connect = async () => {
+  const connection = await new Connection().load(); // <- Here!!!
+
+  await connection.connect();
+};
+```
+
+### `connect`
+
+This is the method that will truly connect with the database.
+
+:::caution
+
+`connect` must be called **AFTER** the `load` method!
+
+:::
+
+```ts
+// database.connection.ts
+
+import { Connection } from "example-symbiosis-plugin";
+
+export const connect = async () => {
+  const connection = await new Connection().load();
+
+  await connection.connect(); // <- Here!!!
+};
+```
+
+### `getRepository`
+
+This method generates a new [repository](./repositories) to your entity.
+
+:::caution
+
+`getRepository` must be called **AFTER** the `connect` method!
+
+:::
+
+```ts
+// database.connection.ts
+
+import { Connection } from "example-symbiosis-plugin";
+
 import { ExampleEntity } from "./example.entity";
 
-export const connection = new Connection({
-  databaseConfig: {
-    // ...Who knows?
-  },
-});
+export const connect = async () => {
+  const connection = await new Connection().load();
+
+  await connection.connect();
+
+  connection.getRepository<ExampleEntity>(ExampleEntity); // <- Here!!!
+};
 ```

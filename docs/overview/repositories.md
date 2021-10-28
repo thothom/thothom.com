@@ -16,7 +16,17 @@ With your connection and schema, you simply need to do this:
 import { connection } from "./database.connection";
 import { ExampleEntity } from "./example.entity";
 
-const exampleRepository = connection.getRepository(ExampleEntity);
+const exampleRepository =
+  connection.getRepository<ExampleEntity>(ExampleEntity);
+```
+
+Or, with [globals](./globals):
+
+```ts
+import { getGlobalRepository } from "@techmmunity/symbiosis";
+import { ExampleEntity } from "./example.entity";
+
+const exampleRepository = getGlobalRepository<ExampleEntity>(ExampleEntity);
 ```
 
 <!-- ################################ -->

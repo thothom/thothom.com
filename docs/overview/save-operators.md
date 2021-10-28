@@ -19,14 +19,29 @@ import { Append } from "@techmmunity/symbiosis";
 
 import { exampleRepository } from "./example.repository";
 
+const tags = ["tag1", "tag2"];
+
 await exampleRepository.update(
   {
     id: 1,
   },
   {
     roles: Append("admin", "moderator"),
+    tags: Append(...tags),
   }
 );
+
+// Before
+{
+  roles: ["foo"],
+  tags: ["bar"]
+}
+
+// After
+{
+  roles: ["foo", "admin", "moderator"],
+  tags: ["bar", "tag1", "tag2"]
+}
 ```
 
 ## IfNotExists
