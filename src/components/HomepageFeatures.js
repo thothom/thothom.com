@@ -27,7 +27,7 @@ const FeatureList = [
     Svg: require('../../static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <Translate>
-        You don't need to await us to add support to any database. The community can do it! You can do it! We provide full support to who wants to create a plugin, and we keep a complete documentation about how to create one.
+        You don't need to await us to add support to any database. The community can do it! You can do it! We provide full support to who wants to create a plugin, and we keep a complete documentation about <a href="https://symbiosis.techmmunity.com.br/docs/create-plugin/first-steps">how to create one</a>.
       </Translate>
     ),
   },
