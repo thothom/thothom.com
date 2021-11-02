@@ -32,6 +32,6 @@ export class ExampleEntity {
 
 :::info
 
-Você não precisa passar sub-entidades para o  array `entities` de configurações de conexão. Elas são detectadas automaticamente.
+Você não precisa passar sub-entidades para o  array `entities` das opções de configuração da conexão. Elas são detectadas automaticamente.
 
 :::

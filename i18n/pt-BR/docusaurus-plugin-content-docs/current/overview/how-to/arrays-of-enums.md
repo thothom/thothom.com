@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Use arrays de enums
+# Utilizando arrays de enums
 
 Você pode combinar arrays com enums, deste modo:
 
