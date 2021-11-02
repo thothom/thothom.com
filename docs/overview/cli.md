@@ -4,7 +4,7 @@ sidebar_position: 10
 
 # CLI
 
-_Symb_ has a separate package to it's CLI, so the core package can be more lightweight and encapsulated.
+_Symb_ has a separate package, it's the CLI, so the core package can be more lightweight and encapsulated.
 
 The CLI is very useful to generate migrations and entities automatically.
 
