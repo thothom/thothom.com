@@ -8,6 +8,6 @@ We are proudly helping various companies building their products and handle thei
 
 ## Companies
 
-According to our knowledge, all the following companies have built awesome projects on top of our framework:
+According to our knowledge, all the following companies have built awesome projects on top of our library:
 
 [![Techmmunity](https://img.shields.io/badge/Techmmunity-01d2ce?style=for-the-badge)](https://mentorship.techmmunity.com.br/)
