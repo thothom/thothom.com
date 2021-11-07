@@ -261,6 +261,34 @@ Decorator used to auto-increment a value everytime that the record is updated. *
 <!-- ################################ -->
 <!-- ################################ -->
 
+### `@CountColumn`
+
+Decorator used to auto-increment a value everytime that the record is updated. **Only accepts numbers columns**.
+
+#### `events`
+
+The events to auto-increment the column value.
+
+```ts
+class ExampleEntity {
+  @CountColumn(["update"])
+  foo: Array<string>;
+}
+
+// Or
+
+class ExampleEntity {
+  @Column({
+    events: ["update"],
+  })
+  foo: Array<string>;
+}
+```
+
+<!-- ################################ -->
+<!-- ################################ -->
+<!-- ################################ -->
+
 ### `@SaveDateColumn`
 
 Date columns that will be automatically generated on **saving a record** to the database.
