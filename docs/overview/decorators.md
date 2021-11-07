@@ -253,6 +253,14 @@ If the default value is a function, **it cannot return a Promise**, it must just
 <!-- ################################ -->
 <!-- ################################ -->
 
+### `@CountUpdateColumn`
+
+Decorator used to auto-increment a value everytime that the record is updated. **Only accepts numbers columns**.
+
+<!-- ################################ -->
+<!-- ################################ -->
+<!-- ################################ -->
+
 ### `@SaveDateColumn`
 
 Date columns that will be automatically generated on **saving a record** to the database.
