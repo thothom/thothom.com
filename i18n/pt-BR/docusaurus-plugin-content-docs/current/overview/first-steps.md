@@ -53,7 +53,7 @@ import {
   Entity,
   PrimaryColumn,
   Column,
-  SaveDateColumn,
+  InsertDateColumn,
 } from "@techmmunity/symbiosis";
 import type { Repository } from "example-symbiosis-plugin";
 
@@ -65,7 +65,7 @@ export class ExampleEntity {
   @Column()
   foo: number;
 
-  @SaveDateColumn()
+  @InsertDateColumn()
   createdAt: Date;
 }
 

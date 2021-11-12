@@ -53,7 +53,7 @@ import {
   Entity,
   PrimaryColumn,
   Column,
-  SaveDateColumn,
+  InsertDateColumn,
 } from "@techmmunity/symbiosis";
 import type { Repository } from "example-symbiosis-plugin";
 
@@ -65,7 +65,7 @@ export class ExampleEntity {
   @Column()
   foo: number;
 
-  @SaveDateColumn()
+  @InsertDateColumn()
   createdAt: Date;
 }
 
@@ -89,27 +89,39 @@ import { Connection } from "example-symbiosis-plugin";
 
 import { ExampleEntity } from "./example.entity";
 
-const bootstrap = async () => {
-  const connection = new Connection({
-    // ... Put the extra connection options here
-    entities: [ExampleEntity], // All your entities should be here (OPTIONAL)
-    entitiesDir: ["entities/**/dir/*.entity.ts"], // (OPTIONAL)
-    databaseConfig: {
-      // The config to connect to the database
-    },
-  });
+const connection = new Connection({
+  // ... Put the extra connection options here
+  entities: [ExampleEntity], // All your entities should be here (OPTIONAL)
+  entitiesDir: ["entities/**/dir/*.entity.ts"], // (OPTIONAL)
+  databaseConfig: {
+    // The config to connect to the database
+  },
+});
 
-  // You always must call the `load` method!
-  await connection.load();
-  // You always must call the `connect` method!
-  await connection.connect();
+const connect = async () => {
+  try {
+    // You always must call the `load` method!
+    await connection.load();
+    // You always must call the `connect` method!
+    await connection.connect();
 
-  // OPTIONAL, you can use connection directly by dependency injection
-  setGlobalConnection(connection);
+    // OPTIONAL, you can use connection directly by dependency injection
+    setGlobalConnection<Connection>(connection);
+  } catch (err) {
+    console.error(err);
+  } finally {
+    await connection.close();
+  }
 };
 
-bootstrap();
+connect();
 ```
+
+:::caution
+
+You always have to call the `.close()` method of the connection when your application goes down!!!
+
+:::
 
 ### Creating your Repository
 
