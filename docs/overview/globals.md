@@ -34,7 +34,7 @@ const bootstrap = async () => {
   // You always must call the `connect` method!
   await connection.connect();
 
-  setGlobalConnection(connection);
+  setGlobalConnection<Connection>(connection);
 };
 
 bootstrap();
@@ -50,16 +50,17 @@ This method accepts a optional parameter, the connection name, that will be used
 // database.connection.ts
 
 import { getGlobalConnection } from "@techmmunity/symbiosis";
+import type { Connection } from "example-symbiosis-plugin";
 
 // ... Same example above
 
-setGlobalConnection(connection);
+setGlobalConnection<Connection>(connection);
 
 // Will get the default connection
-getGlobalConnection();
+getGlobalConnection<Connection>();
 
 // Will get the specific connection
-getGlobalConnection("ConnectionName");
+getGlobalConnection<Connection>("ConnectionName");
 ```
 
 ### `getGlobalRepository`

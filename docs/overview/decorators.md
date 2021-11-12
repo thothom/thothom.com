@@ -289,7 +289,7 @@ class ExampleEntity {
 <!-- ################################ -->
 <!-- ################################ -->
 
-### `@SaveDateColumn`
+### `@InsertDateColumn`
 
 Date columns that will be automatically generated on **saving a record** to the database.
 
