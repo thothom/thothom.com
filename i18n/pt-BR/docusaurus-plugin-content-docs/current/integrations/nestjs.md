@@ -20,9 +20,9 @@ Com NPM:
 npm i @techmmunity/symbiosis-nestjs
 ```
 
-## Modo de uso (exemplo com DynamoDB)
+## Como usar (exemplo com DynamoDB)
 
-Independentemente da sintaxe de integração, o _Symb_ vai funcionar normalmente, então você vai poder usar os repositórios como sempre, e os parâmetros recebidos serão os mesmos valores de sempre.
+O _Symb_ vai funcionar normalmente, com a unica exceção sendo a integração com o Nest, então você vai poder usar os repositórios como sempre, e os parâmetros recebidos serão os mesmos valores de sempre.
 
 ```ts
 // app.module.ts
@@ -104,7 +104,7 @@ export class UserService {
 
 ## `SymbiosisModule`
 
-O `SymbiosisModule` é a conexão principal entre NestJs e o _Symb_. Ele possui dois métodos que te permite fazer a integração com o Symbiosis da maneira mais performática possível.
+O `SymbiosisModule` é a conexão principal entre NestJs e o _Symb_. Ele possui dois métodos que te permitem fazer a integração com o Symbiosis da maneira mais performática possível.
 
 ### `.forRoot()`
 
@@ -142,7 +142,7 @@ export class AppModule {}
 
 ### `.forFeature()`
 
-O método `.forFeature()` deve ser usado no seu Modulo de domínio (como `UserModule`). Isso vai carregar e injetar todos os repositórios que você precisa.
+O método `.forFeature()` deve ser usado no seu Modulo de domínio (como `UserModule`). Isso vai carregar e injetar todos os repositórios que você irá usar nesse dominio.
 
 O método recebe dois parâmetros, o primeiro é um array de entidades (apenas aquelas que você vai precisa nesse Modulo), e a segunda (opcional) é o nome da conexão.
 
@@ -170,7 +170,7 @@ export class UserModule {}
 
 Injeta um repositório.
 
-Recebe a entidade como primeiro parâmetro e opcionalmente o nome da conexão como segundo parâmetro. Se nenhum nome de conexão for passado, receberá a conexão padrão.
+Recebe a entidade como primeiro parâmetro e opcionalmente o nome da conexão como segundo parâmetro. Se nenhum nome de conexão for passado, usará a conexão padrão.
 
 ```ts
 // user.service.ts
@@ -194,7 +194,7 @@ export class UserService {
 
 Injeta uma conexão.
 
-Recebe o nome da conexão como parâmetro opcional. Se nenhum nome de conexão for passado, receberá a conexão padrão.
+Recebe o nome da conexão como parâmetro opcional. Se nenhum nome de conexão for passado, usará a conexão padrão.
 
 ```ts
 // user.service.ts

@@ -4,9 +4,9 @@ sidebar_position: 10
 
 # CLI
 
-O _Symb_ tem um pacote separado, o CLI, então o pacote principal é mais leve e encapsulável.
+O _Symb_ tem um pacote separado para a cli, assim seu pacote principal fica mais leve e encapsulado.
 
-O CLI é muito útil para gerar migrações e entidades automaticamente.
+A CLI é muito útil para gerar migrações e entidades automaticamente.
 
 ## Instalação
 
