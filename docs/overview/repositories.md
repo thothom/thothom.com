@@ -6,7 +6,7 @@ sidebar_position: 6
 
 Repositories are the translator between code and database, they are used to do all the queries.
 
-All the repositories are created from the [connection](./connections) and the [entities](./entities), so you need they both to get your repository.
+All the repositories are created from the [connection](./connections) and the [entities](./decorators), so you need they both to get your repository.
 
 ## Creating a Repository
 
@@ -263,7 +263,7 @@ Soft delete one or many records by a query condition.
 
 :::caution
 
-To use this method, the entity must have a column decorated with [`@DeleteDateColumn`](./entities#deletedatecolumn)
+To use this method, the entity must have a column decorated with [`@DeleteDateColumn`](./decorators#deletedatecolumn)
 
 :::
 
@@ -297,7 +297,7 @@ Recover records that was soft deleted, filtering by a query condition.
 
 :::caution
 
-To use this method, the entity must have a column decorated with [`@DeleteDateColumn`](./entities#deletedatecolumn)
+To use this method, the entity must have a column decorated with [`@DeleteDateColumn`](./decorators#deletedatecolumn)
 
 :::
 

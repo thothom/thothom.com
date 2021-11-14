@@ -30,7 +30,8 @@ Configure o `tsconfig.json`:
 {
   "compilerOptions": {
     "experimentalDecorators": true,
-    "emitDecoratorMetadata": true
+    "emitDecoratorMetadata": true,
+    "skipLibCheck": true
   }
 }
 ```
@@ -52,7 +53,7 @@ import {
   Entity,
   PrimaryColumn,
   Column,
-  SaveDateColumn,
+  InsertDateColumn,
 } from "@techmmunity/symbiosis";
 import type { Repository } from "example-symbiosis-plugin";
 
@@ -64,7 +65,7 @@ export class ExampleEntity {
   @Column()
   foo: number;
 
-  @SaveDateColumn()
+  @InsertDateColumn()
   createdAt: Date;
 }
 
@@ -110,8 +111,8 @@ Os Repositórios são feitos de uma combinação de `connection` + `entity`, des
 import { ExampleEntity } from "./example.entity";
 import { connection } from "./database.connection";
 
-export const exampleRepository = connection.getRepository<ExampleEntity>(ExampleEntity);
-
+export const exampleRepository =
+  connection.getRepository<ExampleEntity>(ExampleEntity);
 ```
 
 ### Usando seu Repositório

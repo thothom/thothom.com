@@ -38,11 +38,14 @@ import { UserEntity } from "./user.entity";
 
 @Module({
   imports: [
-    SymbiosisModule.forRoot<DynamoDbConnectionOptions>(Connection, {
-      // ...
-      entities: [UserEntity],
-      databaseConfig: {
+    SymbiosisModule.forRoot<DynamoDbConnectionOptions>({
+      class: Connection,
+      options: {
         // ...
+        entities: [UserEntity],
+        databaseConfig: {
+          // ...
+        },
       },
     }),
   ],
@@ -128,11 +131,14 @@ import { UserEntity } from "./user.entity";
 
 @Module({
   imports: [
-    SymbiosisModule.forRoot<DynamoDbConnectionOptions>(Connection, {
-      // ...
-      entities: [UserEntity],
-      databaseConfig: {
+    SymbiosisModule.forRoot<DynamoDbConnectionOptions>({
+      class: Connection,
+      options: {
         // ...
+        entities: [UserEntity],
+        databaseConfig: {
+          // ...
+        },
       },
     }),
   ],
@@ -211,5 +217,106 @@ export class UserService {
     @InjectRepository(UserEntity, "connection_x")
     private userRepository: Repository<UserEntity>
   ) {}
+}
+```
+
+## Extra Usage Examples
+
+### Multiple Connections
+
+```ts
+// app.module.ts
+
+import { Module } from "@nestjs/common";
+import { SymbiosisModule } from "@techmmunity/symbiosis-nestjs";
+import {
+  Connection: DynamoDbConnection,
+  DynamoDbConnectionOptions,
+} from "@techmmunity/symbiosis-dynamodb";
+import {
+  Connection: MongodbConnection,
+  MongodbConnectionOptions,
+} from "@techmmunity/symbiosis-mongodb";
+
+import { UserEntity } from "./user.entity";
+
+@Module({
+  imports: [
+    SymbiosisModule.forRoot<DynamoDbConnectionOptions | MongodbConnectionOptions>([
+      {
+        class: DynamoDbConnection,
+        options: {
+          name: "dynamo"
+          entities: [UserEntity],
+          databaseConfig: {
+            // ...
+          },
+        }
+      } as DynamoDbConnectionOptions, // To get the correct types
+      {
+        class: MongodbConnection,
+        options: {
+          name: "mongo"
+          entities: [UserEntity],
+          databaseConfig: {
+            // ...
+          },
+        }
+      } as MongodbConnectionOptions, // To get the correct types
+    ]),
+  ],
+})
+export class AppModule {}
+```
+
+```ts
+// user.module.ts
+
+import { Module } from "@nestjs/common";
+import { SymbiosisModule } from "@techmmunity/symbiosis-nestjs";
+
+import { UserService } from "./user.service";
+import { UserController } from "./user.controller";
+import { UserEntity } from "./user.entity";
+
+@Module({
+  imports: [SymbiosisModule.forFeature([UserEntity], "dynamo")],
+  providers: [UserService],
+  controllers: [UserController],
+})
+export class UserModule {}
+```
+
+```ts
+// user.service.ts
+
+import { Injectable } from "@nestjs/common";
+import { InjectRepository } from "@techmmunity/symbiosis-nestjs";
+import { Repository, Connection } from "@techmmunity/symbiosis-dynamodb";
+
+import { UserEntity } from "./user.entity";
+
+@Injectable()
+export class UserService {
+  constructor(
+    @InjectRepository(UserEntity, "dynamo")
+    private userRepository: Repository<UserEntity>,
+    @InjectConnection("dynamo")
+    private connection: Connection
+  ) {}
+
+  findOne(id: string): Promise<User> {
+    return this.userRepository.findOne({
+      where: {
+        id,
+      },
+    });
+  }
+
+  async remove(id: string): Promise<void> {
+    await this.userRepository.delete({
+      id,
+    });
+  }
 }
 ```

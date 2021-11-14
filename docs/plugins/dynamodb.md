@@ -65,6 +65,11 @@ DynamoDB only supports the following FindOperators:
 
 ### Special behavior
 
+#### `.save()`
+
+- Unlike others plugins, `.save()` doesn't **update** a record that already exists, but **replaces** it.
+- Does **not** support SaveOperators (use `.upsert()` instead)
+
 #### `.delete()`
 
 - Only supports delete one record at time

@@ -50,7 +50,7 @@ The options are **optional**. You can (and we recommend) that you use an `symbio
 
 ### `name` (optional)
 
-This is the connection name. It mostly used for logs and will not interfere in the OM functioning, **it's only cosmetic**, and because of it, you can have multiple connections with the same name, but we recommend to name each connection differently.
+This is the connection name. It's used to identify your connection, so **each connection MUST have an unique name**.
 
 ```ts
 // database.connection.ts
