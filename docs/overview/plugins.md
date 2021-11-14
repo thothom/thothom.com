@@ -6,7 +6,7 @@ sidebar_position: 3
 
 Here is a list of all official or recommended plugins.
 
-If you want to create your own plugin, see [this docs](../create-plugin/first-steps.md).
+If you want to create your own plugin, see [this docs](../create-plugin/first-steps).
 
 ## All Plugins
 
