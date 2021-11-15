@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Who is using _Symb_?
+# Who is using Symb?
 
 We are proudly helping various companies building their products and handle their data. If you are using _Symb_ and would you like to be listed here, see this [thread](https://github.com/techmmunity/symbiosis/issues/198). We are willing to put your name here!
 
