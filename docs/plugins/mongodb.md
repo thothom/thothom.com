@@ -50,8 +50,27 @@ It's use is exactly like described in [the first steps](../overview/first-steps)
 
 100% supported and implemented 🤩
 
-### Special behavior
+## Special behavior
 
-#### `Pop`
+### Entities
+
+- All entities can have **only one** `@PrimaryColumn` ( or `@PrimaryGeneratedColumn`), and it's name **must** be `_id`
+
+Example:
+
+```ts
+@Entity()
+class ExampleEntity {
+  @PrimaryColumn({
+    name: "_id", // REQUIRED!!!
+  })
+  id: string;
+}
+```
+
+- The type of the primary column can be `string` or `number`
+- Primary column **can be** an `uuid`
+
+### `Pop`
 
 - Only works using values `-1` (first item) or `1` (last item).
