@@ -28,7 +28,7 @@ It's use is exactly like described in [the first steps](../overview/first-steps)
 
 ## Examples
 
-- [Basic example](https://github.com/techmmunity-education/symbiosis-mongodb-example)
+- [Basic example](https://github.com/techmmunity-examples/symbiosis-mongodb)
 
 ## Advices and alerts
 

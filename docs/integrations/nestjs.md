@@ -105,6 +105,10 @@ export class UserService {
 }
 ```
 
+## Examples
+
+- [Basic example](https://github.com/techmmunity-examples/symbiosis-nestjs)
+
 ## `SymbiosisModule`
 
 The `SymbiosisModule` is the main connection between NestJs and _Symb_. It has 2 methods that allow you to integrate the symbiosis in the most performative way possible.
