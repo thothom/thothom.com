@@ -132,10 +132,10 @@ The repositories are made from a combination of `connection` + `entity`, like th
 
 import { getGlobalRepository } from "@techmmunity/symbiosis";
 
-import { ExampleEntity } from "./example.entity";
+import { ExampleEntity, ExampleRepository } from "./example.entity";
 
 export const getExampleRepository = () =>
-  getGlobalRepository<ExampleEntity>(ExampleEntity);
+  getGlobalRepository<ExampleRepository>(ExampleEntity);
 ```
 
 ### Using your Repository
