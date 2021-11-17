@@ -1,8 +1,9 @@
 name: deploy
 
 on:
-  release:
-    types: [published]
+  push:
+    branches:
+      - master
 
 jobs:
   deploy:
@@ -17,14 +18,8 @@ jobs:
       - name: Build
         run: yarn build
 
-      - name: Deploy S3
-        uses: techmmunity/action-deploy-static-webapp-aws@1.0.0
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@4.1.1
         with:
-          build_path: "./build"
-          bucket_name: ${{ secrets.S3_BUCKET }}
-          distribution_invalidation_path: "/*"
-        env:
-          DISTRIBUTION_ID: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}
-          AWS_REGION: ${{ secrets.S3_BUCKET_REGION }}
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          branch: release # The branch the action should deploy to.
+          folder: build # The folder the action should deploy
