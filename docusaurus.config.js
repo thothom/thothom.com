@@ -3,20 +3,20 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
-  title: "Techmmunity Symbiosis",
+  title: "ThothOM",
   tagline: "The Ultimate OM For All Databases",
-  url: "https://symbiosis.techmmunity.com.br",
+  url: "https://thoth.com",
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
   organizationName: "techmmunity", // Usually your GitHub org/user name.
-  projectName: "symbiosis", // Usually your repo name.
+  projectName: "thothom", // Usually your repo name.
   themeConfig: {
     navbar: {
-      title: "Symbiosis",
+      title: "ThothOM",
       logo: {
-        alt: "Symbiosis",
+        alt: "ThothOM",
         src: "img/logo.svg",
       },
       items: [
@@ -27,7 +27,7 @@ module.exports = {
           label: "Docs",
         },
         {
-          href: "https://github.com/techmmunity/symbiosis",
+          href: "https://github.com/thothom/core",
           label: "GitHub",
           position: "right",
         },
@@ -54,7 +54,7 @@ module.exports = {
           items: [
             {
               label: "Discord",
-              href: "https://discord.gg/TakYksUzzZ",
+              href: "https://discord.gg/NMtAJ6whG7",
             },
           ],
         },
@@ -63,7 +63,7 @@ module.exports = {
           items: [
             {
               label: "GitHub",
-              href: "https://github.com/techmmunity/symbiosis",
+              href: "https://github.com/thothom/core",
             },
           ],
         },
@@ -96,7 +96,7 @@ module.exports = {
           sidebarPath: require.resolve("./sidebars.js"),
           // Please change this to your repo.
           editUrl:
-            "https://github.com/techmmunity/symbiosis.techmmunity.com/edit/master/",
+            "https://github.com/thothom/thothom.com/edit/master/",
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),

@@ -10,12 +10,12 @@ If you want to create your own plugin, see [this docs](../create-plugin/first-st
 
 ## All Plugins
 
-You can find a list of all the plugins [right here](https://www.npmjs.com/search?q=keywords:techmmunity-symbiosis).
+You can find a list of all the plugins [right here](https://www.npmjs.com/search?q=keywords:thothom).
 
 ## DynamoDB
 
-- [@techmmunity/symbiosis-dynamo](../plugins/dynamodb)
+- [@thothom/dynamo](../plugins/dynamodb)
 
 ## MongoDB
 
-- [@techmmunity/symbiosis-mongo](../plugins/mongodb)
+- [@thothom/mongo](../plugins/mongodb)

@@ -10,7 +10,7 @@ Connections are the classes used to create the **database connection**, and hand
 
 :::caution
 
-_Symb_ doesn't have a connection class to be imported by the user!
+_Thoth_ doesn't have a connection class to be imported by the user!
 
 The `Connection` will **ALWAYS** be exported by the plugin!
 
@@ -24,14 +24,14 @@ All the plugins will always follow the naming pattern of **Connection**.
 
 ## Options
 
-_Symb_ provides some basic config for the connections, that are present and can be used by any plugin.
+_Thoth_ provides some basic config for the connections, that are present and can be used by any plugin.
 
 Example where to use it:
 
 ```ts
 // database.connection.ts
 
-import { Connection } from "example-symbiosis-plugin";
+import { Connection } from "example-thothom-plugin";
 
 export const connect = async () => {
   const connection = await new Connection({
@@ -44,7 +44,7 @@ export const connect = async () => {
 
 :::info
 
-The options are **optional**. You can (and we recommend) that you use an `symbiosis.config.js` file.
+The options are **optional**. You can (and we recommend) that you use an `thothom.config.js` file.
 
 :::
 
@@ -55,7 +55,7 @@ This is the connection name. It's used to identify your connection, so **each co
 ```ts
 // database.connection.ts
 
-import { Connection } from "example-symbiosis-plugin";
+import { Connection } from "example-thothom-plugin";
 
 export const connect = async () => {
   const connection = await new Connection({
@@ -73,7 +73,7 @@ This field specifies your entities, and you must put **only your main entities h
 ```ts
 // database.connection.ts
 
-import { Connection } from "example-symbiosis-plugin";
+import { Connection } from "example-thothom-plugin";
 
 import { ExampleEntity } from "./example.entity";
 
@@ -93,7 +93,7 @@ If you don't want to import all your entities, you can use this option to specif
 ```ts
 // database.connection.ts
 
-import { Connection } from "example-symbiosis-plugin";
+import { Connection } from "example-thothom-plugin";
 
 export const connect = async () => {
   const connection = await new Connection({
@@ -119,18 +119,18 @@ This options specifies the logging level of the connection.
 |         | `["INFO"]`       |       |      |     |  X   |       |
 |         | `["DEBUG"]`      |       |      |     |      |   X   |
 
-| level   | description                                                                 |
-| ------- | --------------------------------------------------------------------------- |
-| `error` | Database errors, invalid parameters, general errors                         |
-| `warn`  | Alerts that _may_ be a error or something to worry about                    |
-| `info`  | General info about symbiosis and it's process                               |
-| `log`   | Info about the data used to connect with the database, like the operations  |
-| `debug` | A **LOT** of logs, about **EVERYTHING** that symbiosis does. Do not use it. |
+| level   | description                                                                |
+| ------- | -------------------------------------------------------------------------- |
+| `error` | Database errors, invalid parameters, general errors                        |
+| `warn`  | Alerts that _may_ be a error or something to worry about                   |
+| `info`  | General info about ThothOM and it's process                                |
+| `log`   | Info about the data used to connect with the database, like the operations |
+| `debug` | A **LOT** of logs, about **EVERYTHING** that ThothOM does. Do not use it.  |
 
 ```ts
 // database.connection.ts
 
-import { Connection } from "example-symbiosis-plugin";
+import { Connection } from "example-thothom-plugin";
 
 export const connect = async () => {
   const connection = await new Connection({
@@ -148,7 +148,7 @@ The time **in seconds** that a query has before it be considered a fail.
 ```ts
 // database.connection.ts
 
-import { Connection } from "example-symbiosis-plugin";
+import { Connection } from "example-thothom-plugin";
 
 export const connect = async () => {
   const connection = await new Connection({
@@ -161,7 +161,7 @@ export const connect = async () => {
 
 ### `namingStrategy` (optional)
 
-This is were _Symb_ starts to bright! This config will format every name of your entities, columns and in the future, indexes and more!
+This is were _Thoth_ starts to bright! This config will format every name of your entities, columns and in the future, indexes and more!
 
 **Accepted values**
 
@@ -175,7 +175,7 @@ This is were _Symb_ starts to bright! This config will format every name of your
 ```ts
 // database.connection.ts
 
-import { Connection } from "example-symbiosis-plugin";
+import { Connection } from "example-thothom-plugin";
 
 export const connect = async () => {
   const connection = await new Connection({
@@ -192,7 +192,7 @@ export const connect = async () => {
 ```ts
 // example.entity.ts
 
-import { Entity, PrimaryColumn, Column } from "@techmmunity/symbiosis";
+import { Entity, PrimaryColumn, Column } from "@thothom/core";
 
 @Entity()
 export class ExampleEntity {
@@ -227,7 +227,7 @@ The prefixes **are** affected by the _namingStrategy_ config! They are applied *
 ```ts
 // database.connection.ts
 
-import { Connection } from "example-symbiosis-plugin";
+import { Connection } from "example-thothom-plugin";
 
 export const connect = async () => {
   const connection = await new Connection({
@@ -256,7 +256,7 @@ export const connect = async () => {
 ```ts
 // example.entity.ts
 
-import { Entity, PrimaryColumn, Column } from "@techmmunity/symbiosis";
+import { Entity, PrimaryColumn, Column } from "@thothom/core";
 
 @Entity()
 export class ExampleEntity {
@@ -285,7 +285,7 @@ Time Zone used to format the dates before be saved in the database, and for the 
 ```ts
 // database.connection.ts
 
-import { Connection } from "example-symbiosis-plugin";
+import { Connection } from "example-thothom-plugin";
 
 export const connect = async () => {
   const connection = await new Connection({
@@ -303,7 +303,7 @@ Config used by the plugins to connect to the database.
 ```ts
 // database.connection.ts
 
-import { Connection } from "example-symbiosis-plugin";
+import { Connection } from "example-thothom-plugin";
 
 export const connect = async () => {
   const connection = await new Connection({
@@ -333,7 +333,7 @@ This method loads all your entities information, so the plugin can work properly
 ```ts
 // database.connection.ts
 
-import { Connection } from "example-symbiosis-plugin";
+import { Connection } from "example-thothom-plugin";
 
 export const connect = async () => {
   const connection = await new Connection().load(); // <- Here!!!
@@ -355,7 +355,7 @@ This is the method that will truly connect with the database.
 ```ts
 // database.connection.ts
 
-import { Connection } from "example-symbiosis-plugin";
+import { Connection } from "example-thothom-plugin";
 
 export const connect = async () => {
   const connection = await new Connection().load();
@@ -377,7 +377,7 @@ This method generates a new [repository](./repositories) to your entity.
 ```ts
 // database.connection.ts
 
-import { Connection } from "example-symbiosis-plugin";
+import { Connection } from "example-thothom-plugin";
 
 import { ExampleEntity } from "./example.entity";
 

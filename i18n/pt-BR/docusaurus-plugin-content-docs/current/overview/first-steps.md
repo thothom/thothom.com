@@ -9,13 +9,13 @@ sidebar_position: 1
 Com Yarn:
 
 ```
-yarn add @techmmunity/symbiosis reflect-metadata
+yarn add @thothom/core reflect-metadata
 ```
 
 Com NPM:
 
 ```
-npm i @techmmunity/symbiosis reflect-metadata
+npm i @thothom/core reflect-metadata
 ```
 
 :::danger atenção
@@ -38,24 +38,19 @@ Configure o `tsconfig.json`:
 
 ## Plugins
 
-Como mencionado na introdução, o _Symb_ funciona com plugins. Você pode encontrar a lista completa dos plugins oficiais e recomendados [bem aqui](../overview/plugins), ou uma lista de todos os plugins [aqui](https://www.npmjs.com/search?q=keywords:techmmunity-symbiosis).
+Como mencionado na introdução, o _Thoth_ funciona com plugins. Você pode encontrar a lista completa dos plugins oficiais e recomendados [bem aqui](../overview/plugins), ou uma lista de todos os plugins [aqui](https://www.npmjs.com/search?q=keywords:thothom).
 
 ## Uso
 
 ### Crie sua Entidade e Tipo de Repositório
 
-O `Repository` é importado **do plugin**, então substitua `example-symbiosis-plugin` deste exemplo com o plugin que você escolheu usar.
+O `Repository` é importado **do plugin**, então substitua `example-thothom-plugin` deste exemplo com o plugin que você escolheu usar.
 
 ```ts
 // example.entity.ts
 
-import {
-  Entity,
-  PrimaryColumn,
-  Column,
-  InsertDateColumn,
-} from "@techmmunity/symbiosis";
-import type { Repository } from "example-symbiosis-plugin";
+import { Entity, PrimaryColumn, Column, InsertDateColumn } from "@thothom/core";
+import type { Repository } from "example-thothom-plugin";
 
 @Entity()
 export class ExampleEntity {
@@ -74,7 +69,7 @@ export type ExampleRepository = Repository<ExampleEntity>;
 
 ### Criando a sua Conexão
 
-A `Connection` é importada **do plugin**, então substitua o `example-symbiosis-plugin` deste exemplo com o plugin que você escolheu usar.
+A `Connection` é importada **do plugin**, então substitua o `example-thothom-plugin` deste exemplo com o plugin que você escolheu usar.
 
 Quando estiver criando a conexão, você deve importar **todas - e somente - as entidades principais**, as sub-entitidades são carregadas automaticamente, e então colocá-las dentro do array de entidades das opções da conexão, como neste exemplo:
 
@@ -83,7 +78,7 @@ Quando estiver criando a conexão, você deve importar **todas - e somente - as 
 
 !!! ESTE É UM EXEMPLO DA SINTAXE E NÃO VAI FUNCIONAR !!!
 
-import { Connection } from "example-symbiosis-plugin";
+import { Connection } from "example-thothom-plugin";
 import { ExampleEntity } from "./example.entity";
 
 const connection = new Connection({
@@ -134,10 +129,10 @@ Você pode ver uma lista completa dos métodos de um Repositório [aqui](./repos
 
 ## Pronto!
 
-Este é o básico do _Symb_! Agora você está pronto pra começar a explorar e fazer seus CRUDs malucos!
+Este é o básico do _Thoth_! Agora você está pronto pra começar a explorar e fazer seus CRUDs malucos!
 
 :::tip Depois disso
 
-Nós recomendamos **fortemente** que você continue lendo a documentação. O _Symb_ tem muitas funcionalidades legais que podem te poupar bastante de tempo!
+Nós recomendamos **fortemente** que você continue lendo a documentação. O _Thoth_ tem muitas funcionalidades legais que podem te poupar bastante de tempo!
 
 :::

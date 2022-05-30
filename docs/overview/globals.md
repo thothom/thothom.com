@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Globals
 
-By default, symbiosis focus on keep all it's data encapsulated in the connection and repositories instances. It may be a problem depending on the architecture and the frameworks that you are using.
+By default, ThothOM focus on keep all it's data encapsulated in the connection and repositories instances. It may be a problem depending on the architecture and the frameworks that you are using.
 
 To facilitate this, you can define the connection instance globally, so you will have access to this in all parts of your system.
 
@@ -17,8 +17,8 @@ The method used to define a global connection instance. You can define one or ma
 ```ts
 // database.connection.ts
 
-import { setGlobalConnection } from "@techmmunity/symbiosis";
-import { Connection } from "example-symbiosis-plugin";
+import { setGlobalConnection } from "@thothom/core";
+import { Connection } from "example-thothom-plugin";
 
 import { ExampleEntity } from "./example.entity";
 
@@ -49,8 +49,8 @@ This method accepts a optional parameter, the connection name, that will be used
 ```ts
 // database.connection.ts
 
-import { getGlobalConnection } from "@techmmunity/symbiosis";
-import type { Connection } from "example-symbiosis-plugin";
+import { getGlobalConnection } from "@thothom/core";
+import type { Connection } from "example-thothom-plugin";
 
 // ... Same example above
 
@@ -72,7 +72,7 @@ This method accepts a second optional parameter, the connection name, that will 
 ```ts
 // database.connection.ts
 
-import { getGlobalRepository } from "@techmmunity/symbiosis";
+import { getGlobalRepository } from "@thothom/core";
 
 // ... Same example above
 

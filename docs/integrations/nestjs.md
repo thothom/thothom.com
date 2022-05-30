@@ -4,41 +4,38 @@ sidebar_position: 1
 
 # NestJs
 
-_Symb_ has a integration with NestJs, so you can work with the framework without worry about the integration with the database.
+_Thoth_ has a integration with NestJs, so you can work with the framework without worry about the integration with the database.
 
 ## Installation
 
 With Yarn:
 
 ```
-yarn add @techmmunity/symbiosis-nestjs
+yarn add @thothom/nestjs
 ```
 
 With NPM:
 
 ```
-npm i @techmmunity/symbiosis-nestjs
+npm i @thothom/nestjs
 ```
 
 ## Usage (example with DynamoDB)
 
-Regardless the integration syntax, it works exactly as the normal _Symb_, so you can use the repositories as always, and the parameters will receive the same values as always.
+Regardless the integration syntax, it works exactly as the normal _Thoth_, so you can use the repositories as always, and the parameters will receive the same values as always.
 
 ```ts
 // app.module.ts
 
 import { Module } from "@nestjs/common";
-import { SymbiosisModule } from "@techmmunity/symbiosis-nestjs";
-import {
-  Connection,
-  DynamoDbConnectionOptions,
-} from "@techmmunity/symbiosis-dynamodb";
+import { ThothOMModule } from "@thothom/nestjs";
+import { Connection, DynamoDbConnectionOptions } from "@thothom/dynamodb";
 
 import { UserEntity } from "./user.entity";
 
 @Module({
   imports: [
-    SymbiosisModule.forRoot<DynamoDbConnectionOptions>({
+    ThothOMModule.forRoot<DynamoDbConnectionOptions>({
       class: Connection,
       options: {
         // ...
@@ -57,14 +54,14 @@ export class AppModule {}
 // user.module.ts
 
 import { Module } from "@nestjs/common";
-import { SymbiosisModule } from "@techmmunity/symbiosis-nestjs";
+import { ThothOMModule } from "@thothom/nestjs";
 
 import { UserService } from "./user.service";
 import { UserController } from "./user.controller";
 import { UserEntity } from "./user.entity";
 
 @Module({
-  imports: [SymbiosisModule.forFeature([UserEntity])],
+  imports: [ThothOMModule.forFeature([UserEntity])],
   providers: [UserService],
   controllers: [UserController],
 })
@@ -75,8 +72,8 @@ export class UserModule {}
 // user.service.ts
 
 import { Injectable } from "@nestjs/common";
-import { InjectRepository } from "@techmmunity/symbiosis-nestjs";
-import { Repository, Connection } from "@techmmunity/symbiosis-dynamodb";
+import { InjectRepository } from "@thothom/nestjs";
+import { Repository, Connection } from "@thothom/dynamodb";
 
 import { UserEntity } from "./user.entity";
 
@@ -107,11 +104,11 @@ export class UserService {
 
 ## Examples
 
-- [Basic example](https://github.com/techmmunity-examples/symbiosis-nestjs)
+- [Basic example](https://github.com/thothom/example-nestjs)
 
-## `SymbiosisModule`
+## `ThothOMModule`
 
-The `SymbiosisModule` is the main connection between NestJs and _Symb_. It has 2 methods that allow you to integrate the symbiosis in the most performative way possible.
+The `ThothOMModule` is the main connection between NestJs and _Thoth_. It has 2 methods that allow you to integrate _Thoth_ in the most performative way possible.
 
 ### `.forRoot()`
 
@@ -125,17 +122,14 @@ At this config, you must specify **all** of your entities.
 // app.module.ts
 
 import { Module } from "@nestjs/common";
-import { SymbiosisModule } from "@techmmunity/symbiosis-nestjs";
-import {
-  Connection,
-  DynamoDbConnectionOptions,
-} from "@techmmunity/symbiosis-dynamodb";
+import { ThothOMModule } from "@thothom/nestjs";
+import { Connection, DynamoDbConnectionOptions } from "@thothom/dynamodb";
 
 import { UserEntity } from "./user.entity";
 
 @Module({
   imports: [
-    SymbiosisModule.forRoot<DynamoDbConnectionOptions>({
+    ThothOMModule.forRoot<DynamoDbConnectionOptions>({
       class: Connection,
       options: {
         // ...
@@ -160,14 +154,14 @@ The method receive two parameters, the first one is an array of entities (only t
 // user.module.ts
 
 import { Module } from "@nestjs/common";
-import { SymbiosisModule } from "@techmmunity/symbiosis-nestjs";
+import { ThothOMModule } from "@thothom/nestjs";
 
 import { UserService } from "./user.service";
 import { UserController } from "./user.controller";
 import { UserEntity } from "./user.entity";
 
 @Module({
-  imports: [SymbiosisModule.forFeature([UserEntity])],
+  imports: [ThothOMModule.forFeature([UserEntity])],
   providers: [UserService],
   controllers: [UserController],
 })
@@ -186,8 +180,8 @@ Receives the entity as first parameter and optionally the connection name as sec
 // user.service.ts
 
 import { Injectable } from "@nestjs/common";
-import { InjectRepository } from "@techmmunity/symbiosis-nestjs";
-import { Repository } from "@techmmunity/symbiosis-dynamodb";
+import { InjectRepository } from "@thothom/nestjs";
+import { Repository } from "@thothom/dynamodb";
 
 import { UserEntity } from "./user.entity";
 
@@ -210,8 +204,8 @@ Receives the connection name as optional parameter. If no connection name is pas
 // user.service.ts
 
 import { Injectable } from "@nestjs/common";
-import { InjectRepository } from "@techmmunity/symbiosis-nestjs";
-import { Repository } from "@techmmunity/symbiosis-dynamodb";
+import { InjectRepository } from "@thothom/nestjs";
+import { Repository } from "@thothom/dynamodb";
 
 import { UserEntity } from "./user.entity";
 
@@ -232,21 +226,21 @@ export class UserService {
 // app.module.ts
 
 import { Module } from "@nestjs/common";
-import { SymbiosisModule } from "@techmmunity/symbiosis-nestjs";
+import { ThothOMModule } from "@thothom/nestjs";
 import {
   Connection: DynamoDbConnection,
   DynamoDbConnectionOptions,
-} from "@techmmunity/symbiosis-dynamodb";
+} from "@thothom/dynamodb";
 import {
   Connection: MongodbConnection,
   MongodbConnectionOptions,
-} from "@techmmunity/symbiosis-mongodb";
+} from "@thothom/mongodb";
 
 import { UserEntity } from "./user.entity";
 
 @Module({
   imports: [
-    SymbiosisModule.forRoot<DynamoDbConnectionOptions | MongodbConnectionOptions>([
+    ThothOMModule.forRoot<DynamoDbConnectionOptions | MongodbConnectionOptions>([
       {
         class: DynamoDbConnection,
         options: {
@@ -277,14 +271,14 @@ export class AppModule {}
 // user.module.ts
 
 import { Module } from "@nestjs/common";
-import { SymbiosisModule } from "@techmmunity/symbiosis-nestjs";
+import { ThothOMModule } from "@thothom/nestjs";
 
 import { UserService } from "./user.service";
 import { UserController } from "./user.controller";
 import { UserEntity } from "./user.entity";
 
 @Module({
-  imports: [SymbiosisModule.forFeature([UserEntity], "dynamo")],
+  imports: [ThothOMModule.forFeature([UserEntity], "dynamo")],
   providers: [UserService],
   controllers: [UserController],
 })
@@ -295,8 +289,8 @@ export class UserModule {}
 // user.service.ts
 
 import { Injectable } from "@nestjs/common";
-import { InjectRepository } from "@techmmunity/symbiosis-nestjs";
-import { Repository, Connection } from "@techmmunity/symbiosis-dynamodb";
+import { InjectRepository } from "@thothom/nestjs";
+import { Repository, Connection } from "@thothom/dynamodb";
 
 import { UserEntity } from "./user.entity";
 

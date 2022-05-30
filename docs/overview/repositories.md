@@ -23,7 +23,7 @@ const exampleRepository =
 Or, with [globals](./globals):
 
 ```ts
-import { getGlobalRepository } from "@techmmunity/symbiosis";
+import { getGlobalRepository } from "@thothom/core";
 import { ExampleEntity } from "./example.entity";
 
 const exampleRepository = getGlobalRepository<ExampleEntity>(ExampleEntity);
@@ -75,7 +75,7 @@ Inserts a new record to the table. If a record with the same primary keys alread
 
 This may will do to 2 queries internally instead of 1.
 
-**Obs:** This is a limitation from the databases, not from _Symb_, ok? :wink:
+**Obs:** This is a limitation from the databases, not from _Thoth_, ok? :wink:
 
 :::
 
@@ -106,7 +106,7 @@ Updates one or many records of the table based on a query condition.
 
 Always try to make queries by primary keys, otherwise the queries will be **very unperformative**.
 
-**Obs:** This is a limitation from the databases, not from _Symb_, ok? :wink:
+**Obs:** This is a limitation from the databases, not from _Thoth_, ok? :wink:
 
 :::
 
@@ -168,12 +168,12 @@ Find multiple records by a query condition.
 
 Always try to make queries by primary keys, otherwise the queries will be **extremely unperformative**.
 
-**Obs:** This is a limitation from the databases, not from _Symb_, ok? :wink:
+**Obs:** This is a limitation from the databases, not from _Thoth_, ok? :wink:
 
 :::
 
 ```ts
-import { FindOptions } from "@techmmunity/symbiosis";
+import { FindOptions } from "@thothom/core";
 import { ExampleEntity } from "./example.entity";
 
 const findExamples = async (findOptions: FindOptions<ExampleEntity>) => {
@@ -197,12 +197,12 @@ Find one record by a query condition.
 
 Always try to make queries by primary keys, otherwise the queries will be **extremely unperformative**.
 
-**Obs:** This is a limitation from the databases, not from _Symb_, ok? :wink:
+**Obs:** This is a limitation from the databases, not from _Thoth_, ok? :wink:
 
 :::
 
 ```ts
-import { FindOneOptions } from "@techmmunity/symbiosis";
+import { FindOneOptions } from "@thothom/core";
 import { ExampleEntity } from "./example.entity";
 import { exampleRepository } from "./example.repository";
 
@@ -237,12 +237,12 @@ Delete one or many records by a query condition.
 
 Always try to make queries by primary keys, otherwise the queries will be **extremely unperformative**.
 
-**Obs:** This is a limitation from the databases, not from _Symb_, ok? :wink:
+**Obs:** This is a limitation from the databases, not from _Thoth_, ok? :wink:
 
 :::
 
 ```ts
-import { FindConditions } from "@techmmunity/symbiosis";
+import { FindConditions } from "@thothom/core";
 import { ExampleEntity } from "./example.entity";
 import { exampleRepository } from "./example.repository";
 
@@ -271,12 +271,12 @@ To use this method, the entity must have a column decorated with [`@DeleteDateCo
 
 Always try to make queries by primary keys, otherwise the queries will be **extremely unperformative**.
 
-**Obs:** This is a limitation from the databases, not from _Symb_, ok? :wink:
+**Obs:** This is a limitation from the databases, not from _Thoth_, ok? :wink:
 
 :::
 
 ```ts
-import { FindConditions } from "@techmmunity/symbiosis";
+import { FindConditions } from "@thothom/core";
 import { ExampleEntity } from "./example.entity";
 import { exampleRepository } from "./example.repository";
 
@@ -305,12 +305,12 @@ To use this method, the entity must have a column decorated with [`@DeleteDateCo
 
 Always try to make queries by primary keys, otherwise the queries will be **very unperformative**.
 
-**Obs:** This is a limitation from the databases, not from _Symb_, ok? :wink:
+**Obs:** This is a limitation from the databases, not from _Thoth_, ok? :wink:
 
 :::
 
 ```ts
-import { FindConditions } from "@techmmunity/symbiosis";
+import { FindConditions } from "@thothom/core";
 import { ExampleEntity } from "./example.entity";
 import { exampleRepository } from "./example.repository";
 
@@ -343,12 +343,12 @@ Count the records returned by a query condition.
 
 Always try to make queries by primary keys, otherwise the queries will be **extremely unperformative**.
 
-**Obs:** This is a limitation from the databases, not from _Symb_, ok? :wink:
+**Obs:** This is a limitation from the databases, not from _Thoth_, ok? :wink:
 
 :::
 
 ```ts
-import { FindConditions } from "@techmmunity/symbiosis";
+import { FindConditions } from "@thothom/core";
 import { ExampleEntity } from "./example.entity";
 import { exampleRepository } from "./example.repository";
 
@@ -380,7 +380,7 @@ In some database, like PostgreSQL, this is a way to perform a count operation th
 :::
 
 ```ts
-import { FindConditions } from "@techmmunity/symbiosis";
+import { FindConditions } from "@thothom/core";
 import { ExampleEntity } from "./example.entity";
 import { exampleRepository } from "./example.repository";
 

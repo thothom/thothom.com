@@ -11,24 +11,24 @@ DynamoDB is the most popular NoSQL database of AWS. It is very scalable and has 
 With Yarn:
 
 ```
-yarn add @techmmunity/symbiosis-dynamodb
+yarn add @thothom/dynamodb
 ```
 
 With NPM:
 
 ```
-npm i @techmmunity/symbiosis-dynamodb
+npm i @thothom/dynamodb
 ```
 
 ## Usage
 
-This lib is currently under work, so we can complete integrate `@techmmunity/symbiosis` and take advantage of all it's features.
+This lib is currently under work, so we can complete integrate `@thothom/core` and take advantage of all it's features.
 
 It's use is exactly like described in [the first steps](../overview/first-steps).
 
 ## Examples
 
-- [Basic example](https://github.com/techmmunity-examples/symbiosis-dynamodb)
+- [Basic example](https://github.com/thothom/example-dynamodb)
 
 ## Advices and alerts
 

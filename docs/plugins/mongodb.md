@@ -11,24 +11,24 @@ MongoDB is the most popular NoSQL database. It is very flexible with it's querie
 With Yarn:
 
 ```
-yarn add @techmmunity/symbiosis-mongodb
+yarn add @thothom/mongodb
 ```
 
 With NPM:
 
 ```
-npm i @techmmunity/symbiosis-mongodb
+npm i @thothom/mongodb
 ```
 
 ## Usage
 
-This lib is currently under work, so we can complete integrate `@techmmunity/symbiosis` and take advantage of all it's features.
+This lib is currently under work, so we can complete integrate `@thothom/core` and take advantage of all it's features.
 
 It's use is exactly like described in [the first steps](../overview/first-steps).
 
 ## Examples
 
-- [Basic example](https://github.com/techmmunity-examples/symbiosis-mongodb)
+- [Basic example](https://github.com/thothom/example-mongodb)
 
 ## Advices and alerts
 

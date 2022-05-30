@@ -11,24 +11,24 @@ O DynamoDB é o banco de dados NoSQl mais popular da AWS, sendo muito escalável
 Com Yarn:
 
 ```
-yarn add @techmmunity/symbiosis-dynamodb
+yarn add @thothom/dynamodb
 ```
 
 Com NPM:
 
 ```
-npm i @techmmunity/symbiosis-dynamodb
+npm i @thothom/dynamodb
 ```
 
 ## Utilização
 
-Esta biblioteca ainda está em desenvolvimento, para que possamos integrar completamente com `@techmmunity/symbiosis` e tirar aproveitar todas as suas funcionalidades.
+Esta biblioteca ainda está em desenvolvimento, para que possamos integrar completamente com `@thothom/core` e tirar aproveitar todas as suas funcionalidades.
 
 É usada do mesmo modo que descrito [nos primeiros passos](../overview/first-steps).
 
 ## Examplos
 
-- [Exemplo básico](https://github.com/techmmunity-education/symbiosis-dynamodb-example)
+- [Exemplo básico](https://github.com/thothom/example-dynamodb)
 
 ## Avisos e alertas
 

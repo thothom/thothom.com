@@ -23,7 +23,7 @@ By default, we recommend to the plugin creators to accept at least `number` as p
 Example:
 
 ```ts
-import { Between } from "@techmmunity/symbiosis";
+import { Between } from "@thothom/core";
 
 import { exampleRepository } from "./example.repository";
 
@@ -41,7 +41,7 @@ const products = await exampleRepository.find({
 Example:
 
 ```ts
-import { EndsWith } from "@techmmunity/symbiosis";
+import { EndsWith } from "@thothom/core";
 
 import { exampleRepository } from "./example.repository";
 
@@ -71,7 +71,7 @@ Some databases don't accept this kind of query, so check it at the plugin docume
 Example:
 
 ```ts
-import { Exist } from "@techmmunity/symbiosis";
+import { Exist } from "@thothom/core";
 
 import { exampleRepository } from "./example.repository";
 
@@ -97,7 +97,7 @@ Please check it at the plugin documentation.
 Example:
 
 ```ts
-import { In } from "@techmmunity/symbiosis";
+import { In } from "@thothom/core";
 
 import { exampleRepository } from "./example.repository";
 
@@ -115,7 +115,7 @@ const people = await exampleRepository.find({
 Example:
 
 ```ts
-import { Includes } from "@techmmunity/symbiosis";
+import { Includes } from "@thothom/core";
 
 import { exampleRepository } from "./example.repository";
 
@@ -133,7 +133,7 @@ const staff = await exampleRepository.find({
 Example:
 
 ```ts
-import { IsNull } from "@techmmunity/symbiosis";
+import { IsNull } from "@thothom/core";
 
 import { exampleRepository } from "./example.repository";
 
@@ -157,7 +157,7 @@ This operator **can't** be combined with the `Not` operator. Use the [`MoreThanO
 Example:
 
 ```ts
-import { LessThan } from "@techmmunity/symbiosis";
+import { LessThan } from "@thothom/core";
 
 import { exampleRepository } from "./example.repository";
 
@@ -181,7 +181,7 @@ This operator **can't** be combined with the `Not` operator. Use the [`MoreThan`
 Example:
 
 ```ts
-import { LessThanOrEqual } from "@techmmunity/symbiosis";
+import { LessThanOrEqual } from "@thothom/core";
 
 import { exampleRepository } from "./example.repository";
 
@@ -205,7 +205,7 @@ The value is **case sensitive**!
 Example:
 
 ```ts
-import { Like } from "@techmmunity/symbiosis";
+import { Like } from "@thothom/core";
 
 import { exampleRepository } from "./example.repository";
 
@@ -229,7 +229,7 @@ This operator **can't** be combined with the `Not` operator. Use the [`LessThanO
 Example:
 
 ```ts
-import { MoreThan } from "@techmmunity/symbiosis";
+import { MoreThan } from "@thothom/core";
 
 import { exampleRepository } from "./example.repository";
 
@@ -253,7 +253,7 @@ This operator **can't** be combined with the `Not` operator. Use the [`LessThan`
 Example:
 
 ```ts
-import { MoreThanOrEqual } from "@techmmunity/symbiosis";
+import { MoreThanOrEqual } from "@thothom/core";
 
 import { exampleRepository } from "./example.repository";
 
@@ -271,7 +271,7 @@ const people = await exampleRepository.find({
 Example with simple value:
 
 ```ts
-import { Not } from "@techmmunity/symbiosis";
+import { Not } from "@thothom/core";
 
 import { exampleRepository } from "./example.repository";
 
@@ -285,7 +285,7 @@ const people = await exampleRepository.find({
 Example combine with other operator:
 
 ```ts
-import { Not, In } from "@techmmunity/symbiosis";
+import { Not, In } from "@thothom/core";
 
 import { exampleRepository } from "./example.repository";
 
@@ -303,7 +303,7 @@ const people = await exampleRepository.find({
 Example:
 
 ```ts
-import { StartsWith } from "@techmmunity/symbiosis";
+import { StartsWith } from "@thothom/core";
 
 import { exampleRepository } from "./example.repository";
 

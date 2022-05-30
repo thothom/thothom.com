@@ -17,11 +17,11 @@
   },
   "link.item.label.Discord": {
     "message": "Discord",
-    "description": "The label of footer link with label=Discord linking to https://discord.gg/TakYksUzzZ"
+    "description": "The label of footer link with label=Discord linking to https://discord.gg/NMtAJ6whG7"
   },
   "link.item.label.GitHub": {
     "message": "GitHub",
-    "description": "The label of footer link with label=GitHub linking to https://github.com/techmmunity/symbiosis"
+    "description": "The label of footer link with label=GitHub linking to https://github.com/thothom/core"
   },
   "copyright": {
     "message": "Copyright © 2021 Techmmunity, Inc. construido com Docusaurus.",
