@@ -4,7 +4,7 @@ sidebar_position: 0
 
 # Introdução
 
-Techmmunity Symbiosis (ou apenas _Symb_ para os chegados), é uma _Object Mapper_([ORM + ODM](https://medium.com/spidernitt/orm-and-odm-a-brief-introduction-369046ec57eb)) feita em TypeScript e inspirada na [sintaxe do TypeORM](https://github.com/typeorm/typeorm) e [abordagem plugavel do ESLint](https://eslint.org/).
+ThothOM (ou apenas _Thoth_ para os chegados), é uma _Object Mapper_([ORM + ODM](https://medium.com/spidernitt/orm-and-odm-a-brief-introduction-369046ec57eb)) feita em TypeScript e inspirada na [sintaxe do TypeORM](https://github.com/typeorm/typeorm) e [abordagem plugavel do ESLint](https://eslint.org/).
 
 Nossa intenção aqui é padronizar a conexão e o uso de **todos os bancos de dados** com a melhor performance possível, e para isso, nós utilizamos uma abordagem plugavel, com isso mais pessoas podem contribuir e criar suas próprias integrações com diferentes tipos de bancos de dados. O foco desse pacote para o usuário final, é apenas fazer a tipagem, enquanto os plugin fazem o "trabalho sujo" por debaixo dos panos.
 
@@ -24,4 +24,4 @@ Nossa meta aqui é ser a ponte entre os usuários e os desenvolvedores de plugin
 
 ## Nós precisamos da sua ajuda!
 
-Nós estamos precisando de tradutores para todos os idiomas! Se você quer ser um voluntário, por favor entre em contato conosco pelo [discord](https://discord.gg/TakYksUzzZ)!
+Nós estamos precisando de tradutores para todos os idiomas! Se você quer ser um voluntário, por favor entre em contato conosco pelo [discord](https://discord.gg/NMtAJ6whG7)!

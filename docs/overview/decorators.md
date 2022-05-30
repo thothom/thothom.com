@@ -132,11 +132,11 @@ export class ExampleEntity {
 
 ### `@PrimaryGeneratedColumn`
 
-Use this decorator at your primary columns, that you want to be generated **by _Symb_**. If you want to manually generate the value of the column, or the database will do this for you, use the [`@PrimaryColumn`](#primarycolumn) decorator.
+Use this decorator at your primary columns, that you want to be generated **by _Thoth_**. If you want to manually generate the value of the column, or the database will do this for you, use the [`@PrimaryColumn`](#primarycolumn) decorator.
 
 **When to use?**
 
-- You want that _Symb_ automatically generate the value of this column
+- You want that _Thoth_ automatically generate the value of this column
 
 :::caution
 
@@ -233,7 +233,7 @@ A enum to get the values of. **It's a required field** if you use a enum as type
 
 :::caution
 
-_Symb_ **NOT** validate if the values passed on the repository methods are the same as the enum!
+_Thoth_ **NOT** validate if the values passed on the repository methods are the same as the enum!
 
 :::
 

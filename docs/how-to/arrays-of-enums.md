@@ -7,7 +7,7 @@ sidebar_position: 1
 You can combine arrays with enums, this way:
 
 ```ts
-import { Entity, Column } from "@techmmunity/symbiosis";
+import { Entity, Column } from "@thothom/core";
 
 import { RoleEnum } from "./role.enum";
 

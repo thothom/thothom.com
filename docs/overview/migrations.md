@@ -28,10 +28,10 @@ To automatically generate your migration, you can use the [`gen:migration`](./cl
  *
  * UserEntity Migration
  *
- * @plugin @techmmunity/symbiosis-dynamodb
- * @symbVersion 0.0.21
+ * @plugin @thothom/dynamodb
+ * @thothomVersion 0.0.21
  */
-import { BaseMigration, BaseQueryRunner } from "@techmmunity/symbiosis-cli";
+import { BaseMigration, BaseQueryRunner } from "@thothom/cli";
 
 export class Migration implements BaseMigration {
   public code = "1635290056331-UserEntity";

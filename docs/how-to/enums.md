@@ -4,10 +4,10 @@ sidebar_position: 1
 
 # Use enums
 
-To use an enum as type with _Symb_, you need to specify an option `enum`.
+To use an enum as type with _Thoth_, you need to specify an option `enum`.
 
 ```ts
-import { Entity, Column } from "@techmmunity/symbiosis";
+import { Entity, Column } from "@thothom/core";
 
 import { RoleEnum } from "./role.enum";
 

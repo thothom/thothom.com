@@ -9,7 +9,7 @@ const FeatureList = [
     Svg: require('../../static/img/undraw_docusaurus_react.svg').default,
     description: (
       <Translate>
-        The Symbiosis syntax is heavily inspired by TypeORM, one of the most popular OMs in the TypeScript community. To migrate from TypeORM is easy, and most of the things and how to use are very familiar.
+        The ThothOM syntax is heavily inspired by TypeORM, one of the most popular OMs in the TypeScript community. To migrate from TypeORM is easy, and most of the things and how to use are very familiar.
       </Translate>
     ),
   },
@@ -18,7 +18,7 @@ const FeatureList = [
     Svg: require('../../static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <Translate>
-        Symbiosis is designed to decrease the learning curve of databases to the ground, so one time that you learn to use Symbiosis, you will be able to use any database with almost any changes.
+        ThothOM is designed to decrease the learning curve of databases to the ground, so one time that you learn to use ThothOM, you will be able to use any database with almost any changes.
       </Translate>
     ),
   },

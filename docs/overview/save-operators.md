@@ -15,7 +15,7 @@ The support of it's operators depends **of the plugins**, so you **must** see th
 Example:
 
 ```ts
-import { Append } from "@techmmunity/symbiosis";
+import { Append } from "@thothom/core";
 
 import { exampleRepository } from "./example.repository";
 
@@ -51,7 +51,7 @@ await exampleRepository.update(
 Example:
 
 ```ts
-import { IfNotExists } from "@techmmunity/symbiosis";
+import { IfNotExists } from "@thothom/core";
 
 import { exampleRepository } from "./example.repository";
 
@@ -74,7 +74,7 @@ Example:
 If the database value is `5`, and you use `Max(7)`, it will update the database value to `7`, but if the database value is `10`, and you use `Max(7)`, the database value will continue `10`.
 
 ```ts
-import { Max } from "@techmmunity/symbiosis";
+import { Max } from "@thothom/core";
 
 import { exampleRepository } from "./example.repository";
 
@@ -97,7 +97,7 @@ Example:
 If the database value is `7`, and you use `Min(5)`, it will update the database value to `5`, but if the database value is `7`, and you use `Min(10)`, the database value will continue `7`.
 
 ```ts
-import { Min } from "@techmmunity/symbiosis";
+import { Min } from "@thothom/core";
 
 import { exampleRepository } from "./example.repository";
 
@@ -120,7 +120,7 @@ Example:
 If the database value is `10`, and you use `Minus(5)`, the database value will be updated to `5`.
 
 ```ts
-import { Minus } from "@techmmunity/symbiosis";
+import { Minus } from "@thothom/core";
 
 import { exampleRepository } from "./example.repository";
 
@@ -143,7 +143,7 @@ Example:
 If the database value is `10`, and you use `Plus(5)`, the database value will be updated to `15`.
 
 ```ts
-import { Plus } from "@techmmunity/symbiosis";
+import { Plus } from "@thothom/core";
 
 import { exampleRepository } from "./example.repository";
 
@@ -164,7 +164,7 @@ await exampleRepository.update(
 Example:
 
 ```ts
-import { Pop } from "@techmmunity/symbiosis";
+import { Pop } from "@thothom/core";
 
 import { exampleRepository } from "./example.repository";
 
@@ -185,7 +185,7 @@ await exampleRepository.update(
 Example:
 
 ```ts
-import { Remove } from "@techmmunity/symbiosis";
+import { Remove } from "@thothom/core";
 
 import { exampleRepository } from "./example.repository";
 

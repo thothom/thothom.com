@@ -4,7 +4,7 @@ sidebar_position: 100
 
 # Limitations And Warnings
 
-As all that exists, symbiosis is too good to be perfect. It has it's limitations and some warns that we have to alert you.
+As all that exists, ThothOM is too good to be perfect. It has it's limitations and some warns that we have to alert you.
 
 ## Limitations
 

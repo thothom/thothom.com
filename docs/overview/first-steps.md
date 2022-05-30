@@ -9,13 +9,13 @@ sidebar_position: 1
 With Yarn:
 
 ```
-yarn add @techmmunity/symbiosis reflect-metadata
+yarn add @thothom/core reflect-metadata
 ```
 
 With NPM:
 
 ```
-npm i @techmmunity/symbiosis reflect-metadata
+npm i @thothom/core reflect-metadata
 ```
 
 :::danger
@@ -38,24 +38,19 @@ Configure `tsconfig.json`:
 
 ## Plugins
 
-As mentioned in the introduction, _Symb_ works with plugins. You can find a complete list of official and recommended plugins [right here](../overview/plugins), or a list of all plugins [right here](https://www.npmjs.com/search?q=keywords:techmmunity-symbiosis).
+As mentioned in the introduction, _Thoth_ works with plugins. You can find a complete list of official and recommended plugins [right here](../overview/plugins), or a list of all plugins [right here](https://www.npmjs.com/search?q=keywords:thothom).
 
 ## Usage
 
 ### Create your Entity And Repository Type
 
-The `Repository` is imported **from the plugin**, so replace the `example-symbiosis-plugin` of this example, with the plugin that you choose to use.
+The `Repository` is imported **from the plugin**, so replace the `example-thothom-plugin` of this example, with the plugin that you choose to use.
 
 ```ts
 // example.entity.ts
 
-import {
-  Entity,
-  PrimaryColumn,
-  Column,
-  InsertDateColumn,
-} from "@techmmunity/symbiosis";
-import type { Repository } from "example-symbiosis-plugin";
+import { Entity, PrimaryColumn, Column, InsertDateColumn } from "@thothom/core";
+import type { Repository } from "example-thothom-plugin";
 
 @Entity()
 export class ExampleEntity {
@@ -74,7 +69,7 @@ export type ExampleRepository = Repository<ExampleEntity>;
 
 ### Creating your Connection
 
-The `Connection` is imported **from the plugin**, so replace the `example-symbiosis-plugin` of this example, with the plugin that you choose to use.
+The `Connection` is imported **from the plugin**, so replace the `example-thothom-plugin` of this example, with the plugin that you choose to use.
 
 When creating a connection, you have two choices:
 
@@ -84,8 +79,8 @@ When creating a connection, you have two choices:
 ```ts
 // database.connection.ts
 
-import { setGlobalConnection } from "@techmmunity/symbiosis";
-import { Connection } from "example-symbiosis-plugin";
+import { setGlobalConnection } from "@thothom/core";
+import { Connection } from "example-thothom-plugin";
 
 import { ExampleEntity } from "./example.entity";
 
@@ -130,7 +125,7 @@ The repositories are made from a combination of `connection` + `entity`, like th
 ```ts
 // example.repository.ts
 
-import { getGlobalRepository } from "@techmmunity/symbiosis";
+import { getGlobalRepository } from "@thothom/core";
 
 import { ExampleEntity, ExampleRepository } from "./example.entity";
 
@@ -159,10 +154,10 @@ You can see a full list of the repository methods [right here](./repositories).
 
 ## Done!
 
-This is the basics of _Symb_! Now you are ready to start to explore and make your own crazy CRUDs!
+This is the basics of _Thoth_! Now you are ready to start to explore and make your own crazy CRUDs!
 
 :::tip After This
 
-We **strongly** recommend that you keep reading the docs. _Symb_ has a lot of cool features that can save you a ton of time!
+We **strongly** recommend that you keep reading the docs. _Thoth_ has a lot of cool features that can save you a ton of time!
 
 :::

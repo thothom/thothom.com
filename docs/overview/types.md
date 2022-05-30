@@ -4,7 +4,7 @@ sidebar_position: 11
 
 # Types
 
-_Symb_ exports some types to help you to type your application without have to worry so much.
+_Thoth_ exports some types to help you to type your application without have to worry so much.
 
 ## `EntityType`
 
@@ -26,7 +26,7 @@ _Symb_ exports some types to help you to type your application without have to w
 ### Example
 
 ```ts
-import { Entity, PrimaryGeneratedColumn, createdAtHash, EntityType } from "@techmmunity/symbiosis";
+import { Entity, PrimaryGeneratedColumn, createdAtHash, EntityType } from "@thothom/core";
 
 @Entity()
 class ExampleEntity {

@@ -6,7 +6,7 @@ sidebar_position: 1
 
 :::info We are here for you 🤗
 
-First of all, we want you to know that we are here to support you in the development of your plugin, so any question that you have, don't hesitate to contact us at the [discord](https://discord.gg/TakYksUzzZ).
+First of all, we want you to know that we are here to support you in the development of your plugin, so any question that you have, don't hesitate to contact us at the [discord](https://discord.gg/NMtAJ6whG7).
 
 :::
 
@@ -14,7 +14,7 @@ First of all, we want you to know that we are here to support you in the develop
 
 ### Creating the repository
 
-The first step to create your own plugin, is create a project using the [template for plugins](https://github.com/techmmunity/base-project-symbiosis-plugin) that we provide. We try to keep this project always updated.
+The first step to create your own plugin, is create a project using the [template for plugins](https://github.com/thothom/base-project-plugin) that we provide. We try to keep this project always updated.
 
 ### Configuring the repository
 
@@ -36,7 +36,7 @@ These libs **must be installed as normal dependencies**, so the final user don't
 
 ### Configuring the `Connection`
 
-The connection is defined at `src/lib/connection/index.ts`. You can follow the guide in the file, and use [one of our plugins](https://github.com/techmmunity/symbiosis-dynamodb/blob/master/src/lib/connection/index.ts) as example.
+The connection is defined at `src/lib/connection/index.ts`. You can follow the guide in the file, and use [one of our plugins](https://github.com/thothom/dynamodb/blob/master/src/lib/connection/index.ts) as example.
 
 :::danger
 
@@ -46,7 +46,7 @@ We extremely recommend that you keep the names `Repository` and `Connection` for
 
 ### Configuring the `Repository`
 
-The repository is defined at `src/lib/repository/index.ts`. You can follow the guide in the file, and use [one of our plugins](https://github.com/techmmunity/symbiosis-mongodb/blob/master/src/lib/repository/index.ts) as example.
+The repository is defined at `src/lib/repository/index.ts`. You can follow the guide in the file, and use [one of our plugins](https://github.com/thothom/mongodb/blob/master/src/lib/repository/index.ts) as example.
 
 :::danger
 
@@ -62,4 +62,4 @@ We extremely recommend that you keep the names `Repository` and `Connection` for
 
 ## Advanced Features
 
-To know more about advanced features, you will have to study about `@techmmunity/symbiosis` core, please read about it at [the first steps](../contributing/first-steps).
+To know more about advanced features, you will have to study about `@thothom/core` core, please read about it at [the first steps](../contributing/first-steps).

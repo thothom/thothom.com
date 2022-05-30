@@ -5,7 +5,7 @@ sidebar_position: 1
 # Use sub-entities
 
 ```ts
-import { Entity, SubEntity, Column } from "@techmmunity/symbiosis";
+import { Entity, SubEntity, Column } from "@thothom/core";
 
 @SubEntity()
 export class SubExampleEntity {
